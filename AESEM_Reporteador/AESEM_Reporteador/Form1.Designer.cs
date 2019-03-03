@@ -28,13 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.STC_Texto = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // STC_Texto
+            // 
+            this.STC_Texto.AutoSize = true;
+            this.STC_Texto.Location = new System.Drawing.Point(456, 161);
+            this.STC_Texto.Name = "STC_Texto";
+            this.STC_Texto.Size = new System.Drawing.Size(270, 13);
+            this.STC_Texto.TabIndex = 0;
+            this.STC_Texto.Text = "Pequeño Label que contiene un texto bonito y coqueto.";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.STC_Texto);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label STC_Texto;
     }
 }
 
