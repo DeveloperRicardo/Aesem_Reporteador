@@ -67,6 +67,10 @@
     <Compile Include="WIN_Empresas_T.Designer.cs">
       <DependentUpon>WIN_Empresas_T.cs</DependentUpon>
     </Compile>
+    <Compile Include="WIN_Login_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WIN_Login_F.Designer.cs" />
     <Compile Include="WIN_Nominas_T.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +102,7 @@
     <EmbeddedResource Include="WIN_Empresas_T.resx">
       <DependentUpon>WIN_Empresas_T.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WIN_Login_F.resx" />
     <EmbeddedResource Include="WIN_Nominas_T.resx">
       <DependentUpon>WIN_Nominas_T.cs</DependentUpon>
     </EmbeddedResource>
