@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cls_ClaseExcel.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,11 +55,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WIN_Reporteador.cs">
+    <Compile Include="WIN_Empresas_F.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WIN_Reporteador.Designer.cs">
-      <DependentUpon>WIN_Reporteador.cs</DependentUpon>
+    <Compile Include="WIN_Empresas_F.Designer.cs">
+      <DependentUpon>WIN_Empresas_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WIN_Empresas_T.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WIN_Empresas_T.Designer.cs">
+      <DependentUpon>WIN_Empresas_T.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WIN_Nominas_T.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WIN_Nominas_T.Designer.cs">
+      <DependentUpon>WIN_Nominas_T.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Z_DummyDeControles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Z_DummyDeControles.Designer.cs">
+      <DependentUpon>Z_DummyDeControles.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -73,8 +92,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="WIN_Reporteador.resx">
-      <DependentUpon>WIN_Reporteador.cs</DependentUpon>
+    <EmbeddedResource Include="WIN_Empresas_F.resx">
+      <DependentUpon>WIN_Empresas_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WIN_Empresas_T.resx">
+      <DependentUpon>WIN_Empresas_T.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WIN_Nominas_T.resx">
+      <DependentUpon>WIN_Nominas_T.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Z_DummyDeControles.resx">
+      <DependentUpon>Z_DummyDeControles.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AESEM_Reporteador
 {
-    public partial class WIN_Reporteador : Form
+    public partial class WIN_Empresas_F : Form
     {
-        public WIN_Reporteador()
+        public WIN_Empresas_F(int gnIdEmpresa = 0)
         {
             InitializeComponent();
         }
