@@ -32,7 +32,7 @@ namespace AESEM_Reporteador
         private void BTN_LupaEmpresa_Click(object sender, EventArgs e)
         {
             // Instanciamos objeto de la ventana
-            WIN_Empresas_T VentanaEmpresa = new WIN_Empresas_T(2);
+            //WIN_Empresas_T VentanaEmpresa = new WIN_Empresas_T(2);
             //gnIdEmpresa = VentanaEmpresa.Show();
         }
 
