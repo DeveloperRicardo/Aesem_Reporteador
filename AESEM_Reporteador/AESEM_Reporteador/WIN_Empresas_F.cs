@@ -21,5 +21,14 @@ namespace AESEM_Reporteador
         {
             this.Close(); // Se cierra la ventana
         }
+
+        private void BTN_Aceptar_Click(object sender, EventArgs e)
+        {
+            // Verifica que los campos tengan información
+            if (EDT_Nombre.TextLength == 0)
+            {
+                MessageBox.Show("Los campos no pueden ir vacios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

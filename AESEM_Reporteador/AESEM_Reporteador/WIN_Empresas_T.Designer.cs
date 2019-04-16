@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WIN_Empresas_T));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PANEL_Encabezado = new System.Windows.Forms.Panel();
             this.STC_Titulo = new System.Windows.Forms.Label();
             this.BTN_Eliminar = new System.Windows.Forms.Button();
@@ -43,6 +43,7 @@
             this.COL_IdTabla = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.COL_Empresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.COL_Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COL_TipoPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PANEL_Encabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Tabla)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +56,7 @@
             this.PANEL_Encabezado.Controls.Add(this.STC_Titulo);
             this.PANEL_Encabezado.Location = new System.Drawing.Point(0, 0);
             this.PANEL_Encabezado.Name = "PANEL_Encabezado";
-            this.PANEL_Encabezado.Size = new System.Drawing.Size(478, 39);
+            this.PANEL_Encabezado.Size = new System.Drawing.Size(647, 39);
             this.PANEL_Encabezado.TabIndex = 30;
             // 
             // STC_Titulo
@@ -77,7 +78,7 @@
             this.BTN_Eliminar.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN_Eliminar.Image = ((System.Drawing.Image)(resources.GetObject("BTN_Eliminar.Image")));
             this.BTN_Eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BTN_Eliminar.Location = new System.Drawing.Point(353, 141);
+            this.BTN_Eliminar.Location = new System.Drawing.Point(523, 141);
             this.BTN_Eliminar.Name = "BTN_Eliminar";
             this.BTN_Eliminar.Size = new System.Drawing.Size(108, 41);
             this.BTN_Eliminar.TabIndex = 33;
@@ -93,7 +94,7 @@
             this.BTN_Modificar.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN_Modificar.Image = ((System.Drawing.Image)(resources.GetObject("BTN_Modificar.Image")));
             this.BTN_Modificar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BTN_Modificar.Location = new System.Drawing.Point(353, 94);
+            this.BTN_Modificar.Location = new System.Drawing.Point(523, 94);
             this.BTN_Modificar.Name = "BTN_Modificar";
             this.BTN_Modificar.Size = new System.Drawing.Size(108, 41);
             this.BTN_Modificar.TabIndex = 32;
@@ -110,7 +111,7 @@
             this.BTN_Agregar.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN_Agregar.Image = ((System.Drawing.Image)(resources.GetObject("BTN_Agregar.Image")));
             this.BTN_Agregar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BTN_Agregar.Location = new System.Drawing.Point(353, 47);
+            this.BTN_Agregar.Location = new System.Drawing.Point(523, 47);
             this.BTN_Agregar.Name = "BTN_Agregar";
             this.BTN_Agregar.Size = new System.Drawing.Size(108, 41);
             this.BTN_Agregar.TabIndex = 31;
@@ -127,7 +128,7 @@
             this.BTN_Cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTN_Cerrar.ForeColor = System.Drawing.Color.Transparent;
             this.BTN_Cerrar.Image = ((System.Drawing.Image)(resources.GetObject("BTN_Cerrar.Image")));
-            this.BTN_Cerrar.Location = new System.Drawing.Point(409, 254);
+            this.BTN_Cerrar.Location = new System.Drawing.Point(579, 250);
             this.BTN_Cerrar.Name = "BTN_Cerrar";
             this.BTN_Cerrar.Size = new System.Drawing.Size(52, 52);
             this.BTN_Cerrar.TabIndex = 35;
@@ -142,7 +143,7 @@
             this.BTN_Aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTN_Aceptar.ForeColor = System.Drawing.Color.Transparent;
             this.BTN_Aceptar.Image = ((System.Drawing.Image)(resources.GetObject("BTN_Aceptar.Image")));
-            this.BTN_Aceptar.Location = new System.Drawing.Point(351, 254);
+            this.BTN_Aceptar.Location = new System.Drawing.Point(521, 250);
             this.BTN_Aceptar.Name = "BTN_Aceptar";
             this.BTN_Aceptar.Size = new System.Drawing.Size(52, 52);
             this.BTN_Aceptar.TabIndex = 34;
@@ -155,41 +156,42 @@
             this.DGV_Tabla.AllowUserToOrderColumns = true;
             this.DGV_Tabla.BackgroundColor = System.Drawing.Color.DarkGray;
             this.DGV_Tabla.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGV_Tabla.ColumnHeadersHeight = 30;
             this.DGV_Tabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.COL_IdTabla,
             this.COL_Empresa,
-            this.COL_Direccion});
+            this.COL_Direccion,
+            this.COL_TipoPago});
             this.DGV_Tabla.EnableHeadersVisualStyles = false;
             this.DGV_Tabla.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.DGV_Tabla.Location = new System.Drawing.Point(15, 47);
             this.DGV_Tabla.Name = "DGV_Tabla";
             this.DGV_Tabla.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Tabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Tabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGV_Tabla.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Leelawadee UI", 9F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.DGV_Tabla.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Leelawadee UI", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.DGV_Tabla.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.DGV_Tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_Tabla.Size = new System.Drawing.Size(332, 193);
+            this.DGV_Tabla.Size = new System.Drawing.Size(502, 193);
             this.DGV_Tabla.TabIndex = 36;
             // 
             // COL_IdTabla
@@ -215,11 +217,19 @@
             this.COL_Direccion.ReadOnly = true;
             this.COL_Direccion.Width = 200;
             // 
+            // COL_TipoPago
+            // 
+            this.COL_TipoPago.Frozen = true;
+            this.COL_TipoPago.HeaderText = "Tipo de Pago";
+            this.COL_TipoPago.Name = "COL_TipoPago";
+            this.COL_TipoPago.ReadOnly = true;
+            this.COL_TipoPago.Width = 200;
+            // 
             // WIN_Empresas_T
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(477, 320);
+            this.ClientSize = new System.Drawing.Size(646, 312);
             this.Controls.Add(this.DGV_Tabla);
             this.Controls.Add(this.BTN_Cerrar);
             this.Controls.Add(this.BTN_Aceptar);
@@ -248,5 +258,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn COL_IdTabla;
         private System.Windows.Forms.DataGridViewTextBoxColumn COL_Empresa;
         private System.Windows.Forms.DataGridViewTextBoxColumn COL_Direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COL_TipoPago;
     }
 }

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Z_DummyDeControles));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.STC_NombreCampo = new System.Windows.Forms.Label();
             this.EDT_NombreCampo = new System.Windows.Forms.TextBox();
             this.BTN_Aceptar = new System.Windows.Forms.Button();
@@ -48,15 +48,19 @@
             this.COL_IdTabla = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.COL_Columna1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.COL_Columna2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RADIO_Opcion1 = new System.Windows.Forms.RadioButton();
+            this.GB_Opciones = new System.Windows.Forms.GroupBox();
+            this.RADIO_Opcion2 = new System.Windows.Forms.RadioButton();
             this.PANEL_Encabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Tabla)).BeginInit();
+            this.GB_Opciones.SuspendLayout();
             this.SuspendLayout();
             // 
             // STC_NombreCampo
             // 
             this.STC_NombreCampo.AutoSize = true;
             this.STC_NombreCampo.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.STC_NombreCampo.Location = new System.Drawing.Point(25, 42);
+            this.STC_NombreCampo.Location = new System.Drawing.Point(26, 43);
             this.STC_NombreCampo.Name = "STC_NombreCampo";
             this.STC_NombreCampo.Size = new System.Drawing.Size(48, 15);
             this.STC_NombreCampo.TabIndex = 14;
@@ -66,7 +70,8 @@
             // EDT_NombreCampo
             // 
             this.EDT_NombreCampo.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EDT_NombreCampo.Location = new System.Drawing.Point(113, 39);
+            this.EDT_NombreCampo.Location = new System.Drawing.Point(112, 39);
+            this.EDT_NombreCampo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.EDT_NombreCampo.Name = "EDT_NombreCampo";
             this.EDT_NombreCampo.Size = new System.Drawing.Size(122, 23);
             this.EDT_NombreCampo.TabIndex = 22;
@@ -80,7 +85,8 @@
             this.BTN_Aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTN_Aceptar.ForeColor = System.Drawing.Color.Transparent;
             this.BTN_Aceptar.Image = ((System.Drawing.Image)(resources.GetObject("BTN_Aceptar.Image")));
-            this.BTN_Aceptar.Location = new System.Drawing.Point(643, 358);
+            this.BTN_Aceptar.Location = new System.Drawing.Point(644, 358);
+            this.BTN_Aceptar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_Aceptar.Name = "BTN_Aceptar";
             this.BTN_Aceptar.Size = new System.Drawing.Size(52, 52);
             this.BTN_Aceptar.TabIndex = 23;
@@ -95,7 +101,8 @@
             this.BTN_Cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTN_Cerrar.ForeColor = System.Drawing.Color.Transparent;
             this.BTN_Cerrar.Image = ((System.Drawing.Image)(resources.GetObject("BTN_Cerrar.Image")));
-            this.BTN_Cerrar.Location = new System.Drawing.Point(701, 358);
+            this.BTN_Cerrar.Location = new System.Drawing.Point(700, 358);
+            this.BTN_Cerrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_Cerrar.Name = "BTN_Cerrar";
             this.BTN_Cerrar.Size = new System.Drawing.Size(52, 52);
             this.BTN_Cerrar.TabIndex = 24;
@@ -110,7 +117,8 @@
             this.BTN_Agregar.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN_Agregar.Image = ((System.Drawing.Image)(resources.GetObject("BTN_Agregar.Image")));
             this.BTN_Agregar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BTN_Agregar.Location = new System.Drawing.Point(680, 16);
+            this.BTN_Agregar.Location = new System.Drawing.Point(680, 17);
+            this.BTN_Agregar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_Agregar.Name = "BTN_Agregar";
             this.BTN_Agregar.Size = new System.Drawing.Size(108, 41);
             this.BTN_Agregar.TabIndex = 25;
@@ -128,6 +136,7 @@
             this.BTN_Modificar.Image = ((System.Drawing.Image)(resources.GetObject("BTN_Modificar.Image")));
             this.BTN_Modificar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BTN_Modificar.Location = new System.Drawing.Point(680, 63);
+            this.BTN_Modificar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_Modificar.Name = "BTN_Modificar";
             this.BTN_Modificar.Size = new System.Drawing.Size(108, 41);
             this.BTN_Modificar.TabIndex = 26;
@@ -145,6 +154,7 @@
             this.BTN_Eliminar.Image = ((System.Drawing.Image)(resources.GetObject("BTN_Eliminar.Image")));
             this.BTN_Eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BTN_Eliminar.Location = new System.Drawing.Point(680, 110);
+            this.BTN_Eliminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_Eliminar.Name = "BTN_Eliminar";
             this.BTN_Eliminar.Size = new System.Drawing.Size(108, 41);
             this.BTN_Eliminar.TabIndex = 27;
@@ -156,7 +166,8 @@
             // PANEL_Fondo
             // 
             this.PANEL_Fondo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.PANEL_Fondo.Location = new System.Drawing.Point(280, 16);
+            this.PANEL_Fondo.Location = new System.Drawing.Point(280, 17);
+            this.PANEL_Fondo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PANEL_Fondo.Name = "PANEL_Fondo";
             this.PANEL_Fondo.Size = new System.Drawing.Size(273, 79);
             this.PANEL_Fondo.TabIndex = 28;
@@ -164,7 +175,8 @@
             // EDT_Contrasena
             // 
             this.EDT_Contrasena.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EDT_Contrasena.Location = new System.Drawing.Point(113, 72);
+            this.EDT_Contrasena.Location = new System.Drawing.Point(112, 72);
+            this.EDT_Contrasena.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.EDT_Contrasena.Name = "EDT_Contrasena";
             this.EDT_Contrasena.Size = new System.Drawing.Size(122, 23);
             this.EDT_Contrasena.TabIndex = 30;
@@ -174,7 +186,7 @@
             // 
             this.STC_Contrasena.AutoSize = true;
             this.STC_Contrasena.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.STC_Contrasena.Location = new System.Drawing.Point(25, 75);
+            this.STC_Contrasena.Location = new System.Drawing.Point(26, 74);
             this.STC_Contrasena.Name = "STC_Contrasena";
             this.STC_Contrasena.Size = new System.Drawing.Size(72, 15);
             this.STC_Contrasena.TabIndex = 29;
@@ -187,6 +199,7 @@
             this.PANEL_Encabezado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.PANEL_Encabezado.Controls.Add(this.STC_Titulo);
             this.PANEL_Encabezado.Location = new System.Drawing.Point(12, 162);
+            this.PANEL_Encabezado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PANEL_Encabezado.Name = "PANEL_Encabezado";
             this.PANEL_Encabezado.Size = new System.Drawing.Size(334, 39);
             this.PANEL_Encabezado.TabIndex = 29;
@@ -209,14 +222,14 @@
             this.DGV_Tabla.AllowUserToOrderColumns = true;
             this.DGV_Tabla.BackgroundColor = System.Drawing.Color.DarkGray;
             this.DGV_Tabla.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGV_Tabla.ColumnHeadersHeight = 30;
             this.DGV_Tabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.COL_IdTabla,
@@ -225,23 +238,24 @@
             this.DGV_Tabla.EnableHeadersVisualStyles = false;
             this.DGV_Tabla.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.DGV_Tabla.Location = new System.Drawing.Point(12, 225);
+            this.DGV_Tabla.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DGV_Tabla.Name = "DGV_Tabla";
             this.DGV_Tabla.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Tabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Tabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGV_Tabla.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Leelawadee UI", 9F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.DGV_Tabla.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Leelawadee UI", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.DGV_Tabla.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.DGV_Tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_Tabla.Size = new System.Drawing.Size(332, 150);
             this.DGV_Tabla.TabIndex = 31;
@@ -268,11 +282,50 @@
             this.COL_Columna2.Name = "COL_Columna2";
             this.COL_Columna2.ReadOnly = true;
             // 
+            // RADIO_Opcion1
+            // 
+            this.RADIO_Opcion1.AutoSize = true;
+            this.RADIO_Opcion1.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RADIO_Opcion1.Location = new System.Drawing.Point(6, 34);
+            this.RADIO_Opcion1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.RADIO_Opcion1.Name = "RADIO_Opcion1";
+            this.RADIO_Opcion1.Size = new System.Drawing.Size(73, 19);
+            this.RADIO_Opcion1.TabIndex = 32;
+            this.RADIO_Opcion1.TabStop = true;
+            this.RADIO_Opcion1.Text = "Opción 1";
+            this.RADIO_Opcion1.UseVisualStyleBackColor = true;
+            // 
+            // GB_Opciones
+            // 
+            this.GB_Opciones.Controls.Add(this.RADIO_Opcion2);
+            this.GB_Opciones.Controls.Add(this.RADIO_Opcion1);
+            this.GB_Opciones.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GB_Opciones.Location = new System.Drawing.Point(353, 110);
+            this.GB_Opciones.Name = "GB_Opciones";
+            this.GB_Opciones.Size = new System.Drawing.Size(200, 100);
+            this.GB_Opciones.TabIndex = 33;
+            this.GB_Opciones.TabStop = false;
+            this.GB_Opciones.Text = "Opciones ";
+            // 
+            // RADIO_Opcion2
+            // 
+            this.RADIO_Opcion2.AutoSize = true;
+            this.RADIO_Opcion2.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RADIO_Opcion2.Location = new System.Drawing.Point(6, 61);
+            this.RADIO_Opcion2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.RADIO_Opcion2.Name = "RADIO_Opcion2";
+            this.RADIO_Opcion2.Size = new System.Drawing.Size(73, 19);
+            this.RADIO_Opcion2.TabIndex = 33;
+            this.RADIO_Opcion2.TabStop = true;
+            this.RADIO_Opcion2.Text = "Opción 2";
+            this.RADIO_Opcion2.UseVisualStyleBackColor = true;
+            // 
             // Z_DummyDeControles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.GB_Opciones);
             this.Controls.Add(this.DGV_Tabla);
             this.Controls.Add(this.PANEL_Encabezado);
             this.Controls.Add(this.EDT_Contrasena);
@@ -285,11 +338,14 @@
             this.Controls.Add(this.BTN_Aceptar);
             this.Controls.Add(this.EDT_NombreCampo);
             this.Controls.Add(this.STC_NombreCampo);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Z_DummyDeControles";
             this.Load += new System.EventHandler(this.Z_DummyDeControles_Load);
             this.PANEL_Encabezado.ResumeLayout(false);
             this.PANEL_Encabezado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Tabla)).EndInit();
+            this.GB_Opciones.ResumeLayout(false);
+            this.GB_Opciones.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,5 +369,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn COL_IdTabla;
         private System.Windows.Forms.DataGridViewTextBoxColumn COL_Columna1;
         private System.Windows.Forms.DataGridViewTextBoxColumn COL_Columna2;
+        private System.Windows.Forms.RadioButton RADIO_Opcion1;
+        private System.Windows.Forms.GroupBox GB_Opciones;
+        private System.Windows.Forms.RadioButton RADIO_Opcion2;
     }
 }
