@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using AESEM_Reporteador.Properties;
 
 namespace AESEM_Reporteador
 {
@@ -16,7 +18,14 @@ namespace AESEM_Reporteador
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new WIN_LogIn());
+            if (Settings.Default.ConexionGuardada == true)
+            {
+                Application.Run(new WIN_LogIn());
+            }
+            else
+            {
+                Application.Run(new WIN_Login_F());
+            }
         }
     }
 }

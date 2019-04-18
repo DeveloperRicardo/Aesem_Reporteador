@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.IO;
 using AESEM_Reporteador.Properties;
+using System.Data.SqlClient;
 
 namespace AESEM_Reporteador
 {
     public partial class WIN_Login_F : Form
     {
         private bool Testing = false;
-        string path = @"D:\Conexion.ini";
+        string conexion = "";
+        string path = Environment.CurrentDirectory +  @"\Conexion.ini";
         #region Mensajes
         private void Mensajes(int Mensaje)
         {
@@ -31,15 +32,22 @@ namespace AESEM_Reporteador
                 case 3:
                     MessageBox.Show("Los campos no pueden estar vacios.", "AESEM", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
+                case 4:
+                    MessageBox.Show("Ya existen todas las tablas.", "AESEM", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case 5:
+                    MessageBox.Show("Se han creado las tablas faltantes.", "AESEM", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case 6:
+                    MessageBox.Show("Se ha guardado la configuración.", "AESEM", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
             }
         }
         #endregion
         public WIN_Login_F()
         {
             InitializeComponent();
-
         }
-
         private void BTN_ProbarConexion_Click(object sender, EventArgs e)
         {
             if (EDT_Usuario.Text == "")
@@ -64,16 +72,16 @@ namespace AESEM_Reporteador
             }
             try
             {
-                using (SqlConnection Miconexion = new SqlConnection("user id=" + EDT_Usuario.Text +
-                                                        ";password=" + EDT_Contrasena.Text +
-                                                        ";server=" + EDT_Servidor.Text +
-                                                        ";Trusted_Connection= true;" +
-                                                        ";database=" + EDT_BD.Text + ";"))
+                conexion = @"user id=" + EDT_Usuario.Text +
+                           ";password=" + EDT_Contrasena.Text +
+                           ";server=" + EDT_Servidor.Text +                                                
+                           ";database=" + EDT_BD.Text + ";";
+                using (SqlConnection Miconexion = new SqlConnection(conexion))
                 {
                     Miconexion.Open();
                     Mensajes(1);
                     Miconexion.Close();
-                }                            
+                }
             }
             catch (Exception)
             {
@@ -103,19 +111,21 @@ namespace AESEM_Reporteador
                 Mensajes(3);
                 return;
             }
-            string sCadenaConexion = "user id=" + EDT_Usuario.Text + ";password=" + EDT_Contrasena.Text + ";server=" + EDT_Servidor.Text +
-                                     ";Trusted_Connection = true;database=" + EDT_BD.Text + ";";
-            
+            conexion = @"user id=" + EDT_Usuario.Text +
+                       ";password=" + EDT_Contrasena.Text +
+                       ";server=" + EDT_Servidor.Text +
+                       ";database=" + EDT_BD.Text + ";";
             if (File.Exists(path))
             {
-                File.WriteAllText(path, sCadenaConexion);
+                File.WriteAllText(path, conexion);
             }
             else
             {
                 FileStream archivo = File.Create(path);
-                Byte[] info = new UTF8Encoding(true).GetBytes(sCadenaConexion);
+                Byte[] info = new UTF8Encoding(true).GetBytes(conexion);
                 archivo.Write(info, 0, info.Length);
             }
+            Mensajes(6);
             Settings.Default.ConexionGuardada = true;
             //For testing purposes only
             if (Testing == true)
@@ -138,7 +148,7 @@ namespace AESEM_Reporteador
                         Mensajes(2);
                     }
                 }
-            }           
+            }
         }
 
         private void BTN_Tablas_Click(object sender, EventArgs e)
@@ -156,7 +166,7 @@ namespace AESEM_Reporteador
                     Query.CommandText = "IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'EMPRESAS') SELECT 'true' ELSE SELECT 'false'";
                     ExisteEMPRESAS = Convert.ToBoolean(Query.ExecuteScalar());
                     Query.CommandText = "IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'SUCURSALES') SELECT 'true' ELSE SELECT 'false'";
-                    ExisteSUCURSALES = Convert.ToBoolean(Query.ExecuteScalar());                    
+                    ExisteSUCURSALES = Convert.ToBoolean(Query.ExecuteScalar());
                     if (!ExisteUSUARIOS || !ExisteEMPRESAS || !ExisteSUCURSALES)
                     {
                         MessageBox.Show("Se crearan las tablas faltantes en la base de datos.", "AESEM", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -175,12 +185,16 @@ namespace AESEM_Reporteador
                         }
                         if (!ExisteSUCURSALES)
                         {
-                            QryTablas += "CREATE TABLE Sucursales(Id_Sucursales int primary key,Id_Empresas int foreign key references Empresas(Id_Empresas) on update cascade on delete cascade,"+
+                            QryTablas += "CREATE TABLE Sucursales(Id_Sucursales int primary key,Id_Empresas int foreign key references Empresas(Id_Empresas) on update cascade on delete cascade," +
                                          "Nombre varchar(30), Direccion varchar(50))";
                         }
                         Query.CommandText = QryTablas;
                         Query.ExecuteNonQuery();
-                        MessageBox.Show("Ya...", "AESEM", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Mensajes(5);
+                    }
+                    else
+                    {
+                        Mensajes(4);
                     }
                     Miconexion.Close();
                 }
@@ -189,6 +203,11 @@ namespace AESEM_Reporteador
             {
                 Mensajes(2);
             }
+        }
+
+        private void BTN_Cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
