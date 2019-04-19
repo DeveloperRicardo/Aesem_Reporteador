@@ -37,14 +37,12 @@
             this.EDT_Comentarios = new System.Windows.Forms.TextBox();
             this.EDT_Concepto = new System.Windows.Forms.TextBox();
             this.EDT_Sindicato = new System.Windows.Forms.TextBox();
-            this.EDT_Direccion = new System.Windows.Forms.TextBox();
-            this.EDT_Nombre = new System.Windows.Forms.TextBox();
-            this.EDT_Logo = new System.Windows.Forms.TextBox();
+            this.EDT_Lugar = new System.Windows.Forms.TextBox();
+            this.EDT_Ruta = new System.Windows.Forms.TextBox();
             this.STC_Comentarios = new System.Windows.Forms.Label();
             this.STC_Concepto = new System.Windows.Forms.Label();
             this.STC_Sindicato = new System.Windows.Forms.Label();
-            this.STC_Direccion = new System.Windows.Forms.Label();
-            this.STC_Nombre = new System.Windows.Forms.Label();
+            this.STC_Lugar = new System.Windows.Forms.Label();
             this.GB_Opciones = new System.Windows.Forms.GroupBox();
             this.RADIO_Mensual = new System.Windows.Forms.RadioButton();
             this.RADIO_Quincenal = new System.Windows.Forms.RadioButton();
@@ -118,6 +116,7 @@
             this.BTN_LupaEmpresa.Size = new System.Drawing.Size(24, 24);
             this.BTN_LupaEmpresa.TabIndex = 47;
             this.BTN_LupaEmpresa.UseVisualStyleBackColor = true;
+            this.BTN_LupaEmpresa.Click += new System.EventHandler(this.BTN_LupaEmpresa_Click);
             // 
             // EDT_Comentarios
             // 
@@ -140,35 +139,28 @@
             // EDT_Sindicato
             // 
             this.EDT_Sindicato.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EDT_Sindicato.Location = new System.Drawing.Point(104, 110);
+            this.EDT_Sindicato.Location = new System.Drawing.Point(84, 52);
+            this.EDT_Sindicato.Multiline = true;
             this.EDT_Sindicato.Name = "EDT_Sindicato";
-            this.EDT_Sindicato.Size = new System.Drawing.Size(269, 23);
+            this.EDT_Sindicato.Size = new System.Drawing.Size(289, 52);
             this.EDT_Sindicato.TabIndex = 43;
             // 
-            // EDT_Direccion
+            // EDT_Lugar
             // 
-            this.EDT_Direccion.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EDT_Direccion.Location = new System.Drawing.Point(104, 81);
-            this.EDT_Direccion.Name = "EDT_Direccion";
-            this.EDT_Direccion.Size = new System.Drawing.Size(269, 23);
-            this.EDT_Direccion.TabIndex = 42;
+            this.EDT_Lugar.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EDT_Lugar.Location = new System.Drawing.Point(84, 110);
+            this.EDT_Lugar.Name = "EDT_Lugar";
+            this.EDT_Lugar.Size = new System.Drawing.Size(289, 23);
+            this.EDT_Lugar.TabIndex = 42;
             // 
-            // EDT_Nombre
+            // EDT_Ruta
             // 
-            this.EDT_Nombre.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EDT_Nombre.Location = new System.Drawing.Point(104, 52);
-            this.EDT_Nombre.Name = "EDT_Nombre";
-            this.EDT_Nombre.Size = new System.Drawing.Size(269, 23);
-            this.EDT_Nombre.TabIndex = 41;
-            // 
-            // EDT_Logo
-            // 
-            this.EDT_Logo.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EDT_Logo.Location = new System.Drawing.Point(48, 29);
-            this.EDT_Logo.Name = "EDT_Logo";
-            this.EDT_Logo.ReadOnly = true;
-            this.EDT_Logo.Size = new System.Drawing.Size(268, 23);
-            this.EDT_Logo.TabIndex = 40;
+            this.EDT_Ruta.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EDT_Ruta.Location = new System.Drawing.Point(48, 29);
+            this.EDT_Ruta.Name = "EDT_Ruta";
+            this.EDT_Ruta.ReadOnly = true;
+            this.EDT_Ruta.Size = new System.Drawing.Size(268, 23);
+            this.EDT_Ruta.TabIndex = 40;
             // 
             // STC_Comentarios
             // 
@@ -194,31 +186,21 @@
             // 
             this.STC_Sindicato.AutoSize = true;
             this.STC_Sindicato.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.STC_Sindicato.Location = new System.Drawing.Point(19, 113);
+            this.STC_Sindicato.Location = new System.Drawing.Point(17, 55);
             this.STC_Sindicato.Name = "STC_Sindicato";
             this.STC_Sindicato.Size = new System.Drawing.Size(61, 15);
             this.STC_Sindicato.TabIndex = 37;
             this.STC_Sindicato.Text = "Sindicato:";
             // 
-            // STC_Direccion
+            // STC_Lugar
             // 
-            this.STC_Direccion.AutoSize = true;
-            this.STC_Direccion.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.STC_Direccion.Location = new System.Drawing.Point(19, 84);
-            this.STC_Direccion.Name = "STC_Direccion";
-            this.STC_Direccion.Size = new System.Drawing.Size(63, 15);
-            this.STC_Direccion.TabIndex = 34;
-            this.STC_Direccion.Text = "Dirección:";
-            // 
-            // STC_Nombre
-            // 
-            this.STC_Nombre.AutoSize = true;
-            this.STC_Nombre.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.STC_Nombre.Location = new System.Drawing.Point(19, 52);
-            this.STC_Nombre.Name = "STC_Nombre";
-            this.STC_Nombre.Size = new System.Drawing.Size(56, 15);
-            this.STC_Nombre.TabIndex = 33;
-            this.STC_Nombre.Text = "Nombre:";
+            this.STC_Lugar.AutoSize = true;
+            this.STC_Lugar.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.STC_Lugar.Location = new System.Drawing.Point(17, 113);
+            this.STC_Lugar.Name = "STC_Lugar";
+            this.STC_Lugar.Size = new System.Drawing.Size(41, 15);
+            this.STC_Lugar.TabIndex = 34;
+            this.STC_Lugar.Text = "Lugar:";
             // 
             // GB_Opciones
             // 
@@ -290,7 +272,7 @@
             // 
             this.GB_Logo.Controls.Add(this.IMG_Logo);
             this.GB_Logo.Controls.Add(this.STC_RutaImagen);
-            this.GB_Logo.Controls.Add(this.EDT_Logo);
+            this.GB_Logo.Controls.Add(this.EDT_Ruta);
             this.GB_Logo.Controls.Add(this.BTN_LupaEmpresa);
             this.GB_Logo.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GB_Logo.Location = new System.Drawing.Point(379, 52);
@@ -328,13 +310,11 @@
             this.Controls.Add(this.EDT_Comentarios);
             this.Controls.Add(this.EDT_Concepto);
             this.Controls.Add(this.EDT_Sindicato);
-            this.Controls.Add(this.EDT_Direccion);
-            this.Controls.Add(this.EDT_Nombre);
+            this.Controls.Add(this.EDT_Lugar);
             this.Controls.Add(this.STC_Comentarios);
             this.Controls.Add(this.STC_Concepto);
             this.Controls.Add(this.STC_Sindicato);
-            this.Controls.Add(this.STC_Direccion);
-            this.Controls.Add(this.STC_Nombre);
+            this.Controls.Add(this.STC_Lugar);
             this.Controls.Add(this.BTN_Cerrar);
             this.Controls.Add(this.BTN_Aceptar);
             this.Controls.Add(this.PANEL_Encabezado);
@@ -361,14 +341,12 @@
         private System.Windows.Forms.TextBox EDT_Comentarios;
         private System.Windows.Forms.TextBox EDT_Concepto;
         private System.Windows.Forms.TextBox EDT_Sindicato;
-        private System.Windows.Forms.TextBox EDT_Direccion;
-        private System.Windows.Forms.TextBox EDT_Nombre;
-        private System.Windows.Forms.TextBox EDT_Logo;
+        private System.Windows.Forms.TextBox EDT_Lugar;
+        private System.Windows.Forms.TextBox EDT_Ruta;
         private System.Windows.Forms.Label STC_Comentarios;
         private System.Windows.Forms.Label STC_Concepto;
         private System.Windows.Forms.Label STC_Sindicato;
-        private System.Windows.Forms.Label STC_Direccion;
-        private System.Windows.Forms.Label STC_Nombre;
+        private System.Windows.Forms.Label STC_Lugar;
         private System.Windows.Forms.GroupBox GB_Opciones;
         private System.Windows.Forms.RadioButton RADIO_Mensual;
         private System.Windows.Forms.RadioButton RADIO_Quincenal;
