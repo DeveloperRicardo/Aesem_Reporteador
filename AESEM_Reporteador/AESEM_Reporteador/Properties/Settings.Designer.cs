@@ -34,5 +34,17 @@ namespace AESEM_Reporteador.Properties {
                 this["ConexionGuardada"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\"\"")]
+        public string UsuarioDefault {
+            get {
+                return ((string)(this["UsuarioDefault"]));
+            }
+            set {
+                this["UsuarioDefault"] = value;
+            }
+        }
     }
 }

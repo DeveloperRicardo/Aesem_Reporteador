@@ -51,6 +51,7 @@
             this.RADIO_Opcion1 = new System.Windows.Forms.RadioButton();
             this.GB_Opciones = new System.Windows.Forms.GroupBox();
             this.RADIO_Opcion2 = new System.Windows.Forms.RadioButton();
+            this.CBOX_Usuario = new System.Windows.Forms.ComboBox();
             this.PANEL_Encabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Tabla)).BeginInit();
             this.GB_Opciones.SuspendLayout();
@@ -320,11 +321,22 @@
             this.RADIO_Opcion2.Text = "Opción 2";
             this.RADIO_Opcion2.UseVisualStyleBackColor = true;
             // 
+            // CBOX_Usuario
+            // 
+            this.CBOX_Usuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBOX_Usuario.Font = new System.Drawing.Font("Leelawadee", 14F);
+            this.CBOX_Usuario.FormattingEnabled = true;
+            this.CBOX_Usuario.Location = new System.Drawing.Point(29, 110);
+            this.CBOX_Usuario.Name = "CBOX_Usuario";
+            this.CBOX_Usuario.Size = new System.Drawing.Size(253, 31);
+            this.CBOX_Usuario.TabIndex = 34;
+            // 
             // Z_DummyDeControles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.CBOX_Usuario);
             this.Controls.Add(this.GB_Opciones);
             this.Controls.Add(this.DGV_Tabla);
             this.Controls.Add(this.PANEL_Encabezado);
@@ -372,5 +384,6 @@
         private System.Windows.Forms.RadioButton RADIO_Opcion1;
         private System.Windows.Forms.GroupBox GB_Opciones;
         private System.Windows.Forms.RadioButton RADIO_Opcion2;
+        private System.Windows.Forms.ComboBox CBOX_Usuario;
     }
 }

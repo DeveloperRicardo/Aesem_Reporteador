@@ -20,11 +20,11 @@ namespace AESEM_Reporteador
             Application.SetCompatibleTextRenderingDefault(false);
             if (Settings.Default.ConexionGuardada == true)
             {
-                Application.Run(new WIN_LogIn());
+                FormsApplication.Run(new WIN_LogIn());
             }
             else
             {
-                Application.Run(new WIN_Login_F());
+                FormsApplication.Run(new WIN_Login_F());
             }
         }
     }
