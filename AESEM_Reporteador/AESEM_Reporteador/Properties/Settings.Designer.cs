@@ -37,13 +37,25 @@ namespace AESEM_Reporteador.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\"\"")]
-        public string UsuarioDefault {
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int UsuarioDefault {
             get {
-                return ((string)(this["UsuarioDefault"]));
+                return ((int)(this["UsuarioDefault"]));
             }
             set {
                 this["UsuarioDefault"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool Testing {
+            get {
+                return ((bool)(this["Testing"]));
+            }
+            set {
+                this["Testing"] = value;
             }
         }
     }

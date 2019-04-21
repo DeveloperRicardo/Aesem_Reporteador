@@ -16,7 +16,6 @@ namespace AESEM_Reporteador
     public partial class WIN_Login_F : Form
     {
         bool Modificar = false;
-        private bool Testing = false;
         string conexion = "";
         string path = Environment.CurrentDirectory +  @"\Conexion.ini";
         MetodosGlobales Glo = new MetodosGlobales();
@@ -91,9 +90,9 @@ namespace AESEM_Reporteador
             Glo.Mensajes(6);
             Settings.Default.ConexionGuardada = true;
             //For testing purposes only
-            if (Testing == true)
+            if (Settings.Default.Testing == true)
             {
-                DialogResult Pregunta = MessageBox.Show("Probar conexion con ini?", "AESEM", MessageBoxButtons.YesNo);
+                DialogResult Pregunta = MessageBox.Show("Probar conexion con ini?", "FOR TESTING PURPOSES ONLY", MessageBoxButtons.YesNo);
                 if (Pregunta == DialogResult.Yes)
                 {
                     try
@@ -123,7 +122,7 @@ namespace AESEM_Reporteador
             {
                 using (SqlConnection Miconexion = new SqlConnection(File.ReadAllText(path)))
                 {
-                    bool ExisteUSUARIOS = false, ExisteEMPRESAS = false, ExisteSUCURSALES = false;
+                    bool ExisteUSUARIOS = false, ExisteEMPRESAS = false, ExisteSUCURSALES = false, ExisteEMPLEADOS = false;
                     int NumUsuarios = 0;
                     Miconexion.Open();
                     SqlCommand Query = Miconexion.CreateCommand();
@@ -134,7 +133,9 @@ namespace AESEM_Reporteador
                     ExisteEMPRESAS = Convert.ToBoolean(Query.ExecuteScalar());
                     Query.CommandText = "IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'SUCURSALES') SELECT 'true' ELSE SELECT 'false'";
                     ExisteSUCURSALES = Convert.ToBoolean(Query.ExecuteScalar());
-                    if (!ExisteUSUARIOS || !ExisteEMPRESAS || !ExisteSUCURSALES)
+                    Query.CommandText = "IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'EMPLEADOS') SELECT 'true' ELSE SELECT 'false'";
+                    ExisteEMPLEADOS = Convert.ToBoolean(Query.ExecuteScalar());
+                    if (!ExisteUSUARIOS || !ExisteEMPRESAS || !ExisteSUCURSALES || !ExisteEMPLEADOS)
                     {
                         MessageBox.Show("Se crearan las tablas faltantes en la base de datos.", "AESEM", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         string QryTablas = "";
@@ -146,8 +147,8 @@ namespace AESEM_Reporteador
                         }
                         if (!ExisteEMPRESAS)
                         {
-                            QryTablas += "CREATE TABLE EMPRESAS (Id_Empresas int primary key identity, Nombre varchar(50), Logo image," +
-                                         "Lugar varchar(30),TipoPago int, Sindicato varchar(200), Concepto varchar(200), Comentarios varchar(255))";
+                            QryTablas += "CREATE TABLE EMPRESAS (Id_Empresas int primary key identity, Logo image,"+
+                                         "Lugar varchar(30),TipoPago int, Sindicato varchar(200), Concepto varchar(200), Ruta varchar(100))";
 
                         }
                         if (!ExisteSUCURSALES)
@@ -155,13 +156,14 @@ namespace AESEM_Reporteador
                             QryTablas += "CREATE TABLE SUCURSALES(Id_Sucursales int primary key,Id_Empresas int foreign key references Empresas(Id_Empresas) on update cascade on delete cascade," +
                                          "Nombre varchar(30), Direccion varchar(50))";
                         }
+                        if (!ExisteEMPLEADOS)
+                        {
+                            QryTablas += "CREATE TABLE EMPLEADOS (Id_Empleados int primary key identity, Nombre varchar(100),"+ 
+                                         "NoCuenta varchar(50), Importe float, Periodo varchar(50))";
+                        }
                         Query.CommandText = QryTablas;
                         Query.ExecuteNonQuery();
                         Glo.Mensajes(5);                      
-                    }
-                    else
-                    {
-                        Glo.Mensajes(4);
                     }
                     Query.CommandText = "SELECT COUNT(*) FROM USUARIOS";
                     NumUsuarios = Convert.ToInt32(Query.ExecuteScalar());

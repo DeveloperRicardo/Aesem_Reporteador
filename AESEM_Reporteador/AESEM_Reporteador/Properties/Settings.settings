@@ -5,8 +5,11 @@
     <Setting Name="ConexionGuardada" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="UsuarioDefault" Type="System.String" Scope="User">
-      <Value Profile="(Default)">""</Value>
+    <Setting Name="UsuarioDefault" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="Testing" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>
