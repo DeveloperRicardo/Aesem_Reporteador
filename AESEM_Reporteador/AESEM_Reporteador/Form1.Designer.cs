@@ -80,7 +80,7 @@
             this.EDT_Contrasena.Location = new System.Drawing.Point(212, 150);
             this.EDT_Contrasena.Name = "EDT_Contrasena";
             this.EDT_Contrasena.Size = new System.Drawing.Size(253, 30);
-            this.EDT_Contrasena.TabIndex = 4;
+            this.EDT_Contrasena.TabIndex = 2;
             this.EDT_Contrasena.UseSystemPasswordChar = true;
             // 
             // PANEL_Encabezado
@@ -118,7 +118,7 @@
             this.BTN_Salir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_Salir.Name = "BTN_Salir";
             this.BTN_Salir.Size = new System.Drawing.Size(52, 52);
-            this.BTN_Salir.TabIndex = 7;
+            this.BTN_Salir.TabIndex = 5;
             this.BTN_Salir.UseVisualStyleBackColor = false;
             this.BTN_Salir.Click += new System.EventHandler(this.BTN_Salir_Click);
             // 
@@ -134,7 +134,7 @@
             this.BTN_Acceder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_Acceder.Name = "BTN_Acceder";
             this.BTN_Acceder.Size = new System.Drawing.Size(52, 52);
-            this.BTN_Acceder.TabIndex = 6;
+            this.BTN_Acceder.TabIndex = 4;
             this.BTN_Acceder.UseVisualStyleBackColor = false;
             this.BTN_Acceder.Click += new System.EventHandler(this.BTN_Acceder_Click);
             // 
@@ -154,6 +154,7 @@
             this.BTN_Registrar.Text = "Registrar Usuario";
             this.BTN_Registrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BTN_Registrar.UseVisualStyleBackColor = false;
+            this.BTN_Registrar.Visible = false;
             this.BTN_Registrar.Click += new System.EventHandler(this.BTN_Registrar_Click);
             // 
             // CBOX_Usuario
@@ -164,7 +165,7 @@
             this.CBOX_Usuario.Location = new System.Drawing.Point(212, 78);
             this.CBOX_Usuario.Name = "CBOX_Usuario";
             this.CBOX_Usuario.Size = new System.Drawing.Size(253, 31);
-            this.CBOX_Usuario.TabIndex = 31;
+            this.CBOX_Usuario.TabIndex = 1;
             // 
             // BTN_ProbarConexion
             // 
@@ -178,7 +179,7 @@
             this.BTN_ProbarConexion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_ProbarConexion.Name = "BTN_ProbarConexion";
             this.BTN_ProbarConexion.Size = new System.Drawing.Size(142, 41);
-            this.BTN_ProbarConexion.TabIndex = 32;
+            this.BTN_ProbarConexion.TabIndex = 3;
             this.BTN_ProbarConexion.Text = "Probar Conexión";
             this.BTN_ProbarConexion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BTN_ProbarConexion.UseVisualStyleBackColor = false;
