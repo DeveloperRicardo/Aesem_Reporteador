@@ -1,6 +1,6 @@
 ﻿namespace AESEM_Reporteador
 {
-    partial class WIN_Nominas_T
+    partial class BTN_Modificar
     {
         /// <summary>
         /// Required designer variable.
@@ -31,37 +31,27 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WIN_Nominas_T));
-            this.BTN_Adjuntar = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BTN_Modificar));
             this.EDT_Ruta = new System.Windows.Forms.TextBox();
             this.BTN_ExportarXLS = new System.Windows.Forms.Button();
             this.BTN_ExportarPDF = new System.Windows.Forms.Button();
             this.STC_AdjuntarArchivo = new System.Windows.Forms.Label();
             this.STC_Empresa = new System.Windows.Forms.Label();
             this.DGV_Tabla = new System.Windows.Forms.DataGridView();
-            this.COL_IdEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COL_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COL_NoCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COL_Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COL_Periodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.PANEL_Encabezado = new System.Windows.Forms.Panel();
             this.STC_Titulo = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.CBOX_Empresa = new System.Windows.Forms.ComboBox();
+            this.BTN_LupaArchivo = new System.Windows.Forms.Button();
+            this.COL_IdEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COL_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COL_NoCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COL_Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COL_Periodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Tabla)).BeginInit();
             this.PANEL_Encabezado.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // BTN_Adjuntar
-            // 
-            this.BTN_Adjuntar.Location = new System.Drawing.Point(561, 88);
-            this.BTN_Adjuntar.Name = "BTN_Adjuntar";
-            this.BTN_Adjuntar.Size = new System.Drawing.Size(75, 23);
-            this.BTN_Adjuntar.TabIndex = 3;
-            this.BTN_Adjuntar.Text = "Adjuntar";
-            this.BTN_Adjuntar.UseVisualStyleBackColor = true;
-            this.BTN_Adjuntar.Click += new System.EventHandler(this.BTN_Adjuntar_Click);
             // 
             // EDT_Ruta
             // 
@@ -69,7 +59,7 @@
             this.EDT_Ruta.Location = new System.Drawing.Point(120, 88);
             this.EDT_Ruta.Name = "EDT_Ruta";
             this.EDT_Ruta.ReadOnly = true;
-            this.EDT_Ruta.Size = new System.Drawing.Size(435, 23);
+            this.EDT_Ruta.Size = new System.Drawing.Size(637, 23);
             this.EDT_Ruta.TabIndex = 4;
             // 
             // BTN_ExportarXLS
@@ -157,46 +147,6 @@
             this.DGV_Tabla.TabIndex = 37;
             this.DGV_Tabla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Tabla_CellContentClick);
             // 
-            // COL_IdEmpleado
-            // 
-            this.COL_IdEmpleado.Frozen = true;
-            this.COL_IdEmpleado.HeaderText = "IdEmpleado";
-            this.COL_IdEmpleado.Name = "COL_IdEmpleado";
-            this.COL_IdEmpleado.ReadOnly = true;
-            this.COL_IdEmpleado.Visible = false;
-            // 
-            // COL_Nombre
-            // 
-            this.COL_Nombre.Frozen = true;
-            this.COL_Nombre.HeaderText = "Nombre";
-            this.COL_Nombre.Name = "COL_Nombre";
-            this.COL_Nombre.ReadOnly = true;
-            this.COL_Nombre.Width = 250;
-            // 
-            // COL_NoCuenta
-            // 
-            this.COL_NoCuenta.Frozen = true;
-            this.COL_NoCuenta.HeaderText = "No. Cuenta";
-            this.COL_NoCuenta.Name = "COL_NoCuenta";
-            this.COL_NoCuenta.ReadOnly = true;
-            this.COL_NoCuenta.Width = 200;
-            // 
-            // COL_Importe
-            // 
-            this.COL_Importe.Frozen = true;
-            this.COL_Importe.HeaderText = "Importe";
-            this.COL_Importe.Name = "COL_Importe";
-            this.COL_Importe.ReadOnly = true;
-            this.COL_Importe.Width = 150;
-            // 
-            // COL_Periodo
-            // 
-            this.COL_Periodo.Frozen = true;
-            this.COL_Periodo.HeaderText = "Periodo";
-            this.COL_Periodo.Name = "COL_Periodo";
-            this.COL_Periodo.ReadOnly = true;
-            this.COL_Periodo.Width = 170;
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
@@ -252,6 +202,7 @@
             this.button2.Text = "Modificar";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // CBOX_Empresa
             // 
@@ -260,15 +211,70 @@
             this.CBOX_Empresa.FormattingEnabled = true;
             this.CBOX_Empresa.Location = new System.Drawing.Point(120, 56);
             this.CBOX_Empresa.Name = "CBOX_Empresa";
-            this.CBOX_Empresa.Size = new System.Drawing.Size(435, 23);
+            this.CBOX_Empresa.Size = new System.Drawing.Size(667, 23);
             this.CBOX_Empresa.TabIndex = 42;
             this.CBOX_Empresa.SelectedIndexChanged += new System.EventHandler(this.CBOX_Empresa_SelectedIndexChanged);
             // 
-            // WIN_Nominas_T
+            // BTN_LupaArchivo
+            // 
+            this.BTN_LupaArchivo.Location = new System.Drawing.Point(763, 88);
+            this.BTN_LupaArchivo.Name = "BTN_LupaArchivo";
+            this.BTN_LupaArchivo.Size = new System.Drawing.Size(24, 24);
+            this.BTN_LupaArchivo.TabIndex = 43;
+            this.BTN_LupaArchivo.UseVisualStyleBackColor = true;
+            this.BTN_LupaArchivo.Click += new System.EventHandler(this.BTN_LupaEmpresa_Click);
+            // 
+            // COL_IdEmpleado
+            // 
+            this.COL_IdEmpleado.DataPropertyName = "Id_Empleados";
+            this.COL_IdEmpleado.Frozen = true;
+            this.COL_IdEmpleado.HeaderText = "IdEmpleado";
+            this.COL_IdEmpleado.Name = "COL_IdEmpleado";
+            this.COL_IdEmpleado.ReadOnly = true;
+            this.COL_IdEmpleado.Visible = false;
+            // 
+            // COL_Nombre
+            // 
+            this.COL_Nombre.DataPropertyName = "Nombre";
+            this.COL_Nombre.Frozen = true;
+            this.COL_Nombre.HeaderText = "Nombre";
+            this.COL_Nombre.Name = "COL_Nombre";
+            this.COL_Nombre.ReadOnly = true;
+            this.COL_Nombre.Width = 250;
+            // 
+            // COL_NoCuenta
+            // 
+            this.COL_NoCuenta.DataPropertyName = "NoCuenta";
+            this.COL_NoCuenta.Frozen = true;
+            this.COL_NoCuenta.HeaderText = "No. Cuenta";
+            this.COL_NoCuenta.Name = "COL_NoCuenta";
+            this.COL_NoCuenta.ReadOnly = true;
+            this.COL_NoCuenta.Width = 200;
+            // 
+            // COL_Importe
+            // 
+            this.COL_Importe.DataPropertyName = "Importe";
+            this.COL_Importe.Frozen = true;
+            this.COL_Importe.HeaderText = "Importe";
+            this.COL_Importe.Name = "COL_Importe";
+            this.COL_Importe.ReadOnly = true;
+            this.COL_Importe.Width = 150;
+            // 
+            // COL_Periodo
+            // 
+            this.COL_Periodo.DataPropertyName = "Periodo";
+            this.COL_Periodo.Frozen = true;
+            this.COL_Periodo.HeaderText = "Periodo";
+            this.COL_Periodo.Name = "COL_Periodo";
+            this.COL_Periodo.ReadOnly = true;
+            this.COL_Periodo.Width = 170;
+            // 
+            // BTN_Modificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(915, 398);
+            this.Controls.Add(this.BTN_LupaArchivo);
             this.Controls.Add(this.CBOX_Empresa);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.PANEL_Encabezado);
@@ -279,9 +285,8 @@
             this.Controls.Add(this.BTN_ExportarPDF);
             this.Controls.Add(this.BTN_ExportarXLS);
             this.Controls.Add(this.EDT_Ruta);
-            this.Controls.Add(this.BTN_Adjuntar);
             this.MaximizeBox = false;
-            this.Name = "WIN_Nominas_T";
+            this.Name = "BTN_Modificar";
             this.Text = "Exportador";
             this.Load += new System.EventHandler(this.WIN_Nominas_T_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Tabla)).EndInit();
@@ -293,22 +298,22 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button BTN_Adjuntar;
         private System.Windows.Forms.TextBox EDT_Ruta;
         private System.Windows.Forms.Button BTN_ExportarXLS;
         private System.Windows.Forms.Button BTN_ExportarPDF;
         private System.Windows.Forms.Label STC_AdjuntarArchivo;
         private System.Windows.Forms.Label STC_Empresa;
         private System.Windows.Forms.DataGridView DGV_Tabla;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COL_IdEmpleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COL_Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COL_NoCuenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COL_Importe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COL_Periodo;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel PANEL_Encabezado;
         private System.Windows.Forms.Label STC_Titulo;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox CBOX_Empresa;
+        private System.Windows.Forms.Button BTN_LupaArchivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COL_IdEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COL_Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COL_NoCuenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COL_Importe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COL_Periodo;
     }
 }

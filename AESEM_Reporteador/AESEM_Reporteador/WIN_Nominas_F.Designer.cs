@@ -152,6 +152,7 @@
             this.BTN_Cerrar.Size = new System.Drawing.Size(52, 52);
             this.BTN_Cerrar.TabIndex = 58;
             this.BTN_Cerrar.UseVisualStyleBackColor = false;
+            this.BTN_Cerrar.Click += new System.EventHandler(this.BTN_Cerrar_Click);
             // 
             // BTN_Aceptar
             // 
@@ -166,12 +167,13 @@
             this.BTN_Aceptar.Size = new System.Drawing.Size(52, 52);
             this.BTN_Aceptar.TabIndex = 57;
             this.BTN_Aceptar.UseVisualStyleBackColor = false;
+            this.BTN_Aceptar.Click += new System.EventHandler(this.BTN_Aceptar_Click);
             // 
             // WIN_Nominas_F
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(373, 243);
+            this.ClientSize = new System.Drawing.Size(373, 235);
             this.Controls.Add(this.BTN_Cerrar);
             this.Controls.Add(this.BTN_Aceptar);
             this.Controls.Add(this.EDT_Periodo);
@@ -186,6 +188,7 @@
             this.MaximizeBox = false;
             this.Name = "WIN_Nominas_F";
             this.Text = "WIN_Nominas_F";
+            this.Load += new System.EventHandler(this.WIN_Nominas_F_Load);
             this.PANEL_Encabezado.ResumeLayout(false);
             this.PANEL_Encabezado.PerformLayout();
             this.ResumeLayout(false);

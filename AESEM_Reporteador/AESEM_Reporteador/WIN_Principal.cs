@@ -35,7 +35,7 @@ namespace AESEM_Reporteador
 
         private void BTN_Nominas_Click(object sender, EventArgs e)
         {
-            WIN_Nominas_T Window = new WIN_Nominas_T();
+            BTN_Modificar Window = new BTN_Modificar();
             Window.Show();
         }
 

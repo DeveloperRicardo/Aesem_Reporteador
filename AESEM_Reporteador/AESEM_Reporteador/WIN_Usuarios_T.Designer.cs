@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WIN_Usuarios_T));
             this.DGV_Tabla = new System.Windows.Forms.DataGridView();
             this.PANEL_Encabezado = new System.Windows.Forms.Panel();
             this.STC_Titulo = new System.Windows.Forms.Label();
-            this.COL_IdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COL_Nickname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COL_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BTN_Cerrar = new System.Windows.Forms.Button();
             this.BTN_Aceptar = new System.Windows.Forms.Button();
             this.BTN_Eliminar = new System.Windows.Forms.Button();
             this.BTN_Modificar = new System.Windows.Forms.Button();
             this.BTN_Agregar = new System.Windows.Forms.Button();
+            this.COL_IdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COL_Nickname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COL_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Tabla)).BeginInit();
             this.PANEL_Encabezado.SuspendLayout();
             this.SuspendLayout();
@@ -54,14 +54,14 @@
             this.DGV_Tabla.AllowUserToOrderColumns = true;
             this.DGV_Tabla.BackgroundColor = System.Drawing.Color.DarkGray;
             this.DGV_Tabla.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DGV_Tabla.ColumnHeadersHeight = 30;
             this.DGV_Tabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.COL_IdUsuario,
@@ -72,24 +72,24 @@
             this.DGV_Tabla.Location = new System.Drawing.Point(15, 45);
             this.DGV_Tabla.Name = "DGV_Tabla";
             this.DGV_Tabla.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Tabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Tabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DGV_Tabla.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Leelawadee UI", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.DGV_Tabla.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Leelawadee UI", 9F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.DGV_Tabla.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.DGV_Tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_Tabla.Size = new System.Drawing.Size(352, 242);
-            this.DGV_Tabla.TabIndex = 43;
+            this.DGV_Tabla.TabIndex = 0;
             // 
             // PANEL_Encabezado
             // 
@@ -113,29 +113,6 @@
             this.STC_Titulo.TabIndex = 31;
             this.STC_Titulo.Text = "Usuarios";
             // 
-            // COL_IdUsuario
-            // 
-            this.COL_IdUsuario.Frozen = true;
-            this.COL_IdUsuario.HeaderText = "IdUsuario";
-            this.COL_IdUsuario.Name = "COL_IdUsuario";
-            this.COL_IdUsuario.ReadOnly = true;
-            this.COL_IdUsuario.Visible = false;
-            // 
-            // COL_Nickname
-            // 
-            this.COL_Nickname.Frozen = true;
-            this.COL_Nickname.HeaderText = "Nickname";
-            this.COL_Nickname.Name = "COL_Nickname";
-            this.COL_Nickname.ReadOnly = true;
-            // 
-            // COL_Nombre
-            // 
-            this.COL_Nombre.Frozen = true;
-            this.COL_Nombre.HeaderText = "Nombre";
-            this.COL_Nombre.Name = "COL_Nombre";
-            this.COL_Nombre.ReadOnly = true;
-            this.COL_Nombre.Width = 250;
-            // 
             // BTN_Cerrar
             // 
             this.BTN_Cerrar.BackColor = System.Drawing.Color.Transparent;
@@ -147,7 +124,7 @@
             this.BTN_Cerrar.Location = new System.Drawing.Point(429, 290);
             this.BTN_Cerrar.Name = "BTN_Cerrar";
             this.BTN_Cerrar.Size = new System.Drawing.Size(52, 52);
-            this.BTN_Cerrar.TabIndex = 42;
+            this.BTN_Cerrar.TabIndex = 5;
             this.BTN_Cerrar.UseVisualStyleBackColor = false;
             this.BTN_Cerrar.Click += new System.EventHandler(this.BTN_Cerrar_Click);
             // 
@@ -162,7 +139,7 @@
             this.BTN_Aceptar.Location = new System.Drawing.Point(371, 290);
             this.BTN_Aceptar.Name = "BTN_Aceptar";
             this.BTN_Aceptar.Size = new System.Drawing.Size(52, 52);
-            this.BTN_Aceptar.TabIndex = 41;
+            this.BTN_Aceptar.TabIndex = 4;
             this.BTN_Aceptar.UseVisualStyleBackColor = false;
             // 
             // BTN_Eliminar
@@ -176,10 +153,11 @@
             this.BTN_Eliminar.Location = new System.Drawing.Point(373, 139);
             this.BTN_Eliminar.Name = "BTN_Eliminar";
             this.BTN_Eliminar.Size = new System.Drawing.Size(108, 41);
-            this.BTN_Eliminar.TabIndex = 40;
+            this.BTN_Eliminar.TabIndex = 3;
             this.BTN_Eliminar.Text = "Eliminar";
             this.BTN_Eliminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BTN_Eliminar.UseVisualStyleBackColor = false;
+            this.BTN_Eliminar.Click += new System.EventHandler(this.BTN_Eliminar_Click);
             // 
             // BTN_Modificar
             // 
@@ -192,7 +170,7 @@
             this.BTN_Modificar.Location = new System.Drawing.Point(373, 92);
             this.BTN_Modificar.Name = "BTN_Modificar";
             this.BTN_Modificar.Size = new System.Drawing.Size(108, 41);
-            this.BTN_Modificar.TabIndex = 39;
+            this.BTN_Modificar.TabIndex = 2;
             this.BTN_Modificar.Text = "Modificar";
             this.BTN_Modificar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BTN_Modificar.UseVisualStyleBackColor = false;
@@ -209,11 +187,37 @@
             this.BTN_Agregar.Location = new System.Drawing.Point(373, 45);
             this.BTN_Agregar.Name = "BTN_Agregar";
             this.BTN_Agregar.Size = new System.Drawing.Size(108, 41);
-            this.BTN_Agregar.TabIndex = 38;
+            this.BTN_Agregar.TabIndex = 1;
             this.BTN_Agregar.Text = "Agregar";
             this.BTN_Agregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BTN_Agregar.UseVisualStyleBackColor = false;
             this.BTN_Agregar.Click += new System.EventHandler(this.BTN_Agregar_Click);
+            // 
+            // COL_IdUsuario
+            // 
+            this.COL_IdUsuario.DataPropertyName = "Id_Usuarios";
+            this.COL_IdUsuario.Frozen = true;
+            this.COL_IdUsuario.HeaderText = "IdUsuario";
+            this.COL_IdUsuario.Name = "COL_IdUsuario";
+            this.COL_IdUsuario.ReadOnly = true;
+            this.COL_IdUsuario.Visible = false;
+            // 
+            // COL_Nickname
+            // 
+            this.COL_Nickname.DataPropertyName = "Nickname";
+            this.COL_Nickname.Frozen = true;
+            this.COL_Nickname.HeaderText = "Nickname";
+            this.COL_Nickname.Name = "COL_Nickname";
+            this.COL_Nickname.ReadOnly = true;
+            // 
+            // COL_Nombre
+            // 
+            this.COL_Nombre.DataPropertyName = "NombreCompleto";
+            this.COL_Nombre.Frozen = true;
+            this.COL_Nombre.HeaderText = "Nombre";
+            this.COL_Nombre.Name = "COL_Nombre";
+            this.COL_Nombre.ReadOnly = true;
+            this.COL_Nombre.Width = 250;
             // 
             // WIN_Usuarios_T
             // 
@@ -230,6 +234,7 @@
             this.MaximizeBox = false;
             this.Name = "WIN_Usuarios_T";
             this.Text = "WIN_Usuarios_T";
+            this.Load += new System.EventHandler(this.WIN_Usuarios_T_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Tabla)).EndInit();
             this.PANEL_Encabezado.ResumeLayout(false);
             this.PANEL_Encabezado.PerformLayout();

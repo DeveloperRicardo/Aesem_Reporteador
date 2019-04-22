@@ -177,6 +177,7 @@
             this.EDT_Password.Name = "EDT_Password";
             this.EDT_Password.Size = new System.Drawing.Size(193, 23);
             this.EDT_Password.TabIndex = 4;
+            this.EDT_Password.UseSystemPasswordChar = true;
             // 
             // STC_Contrasena
             // 
