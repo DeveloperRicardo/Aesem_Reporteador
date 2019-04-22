@@ -74,7 +74,7 @@
             this.EDT_Nickname.Location = new System.Drawing.Point(99, 55);
             this.EDT_Nickname.Name = "EDT_Nickname";
             this.EDT_Nickname.Size = new System.Drawing.Size(193, 23);
-            this.EDT_Nickname.TabIndex = 39;
+            this.EDT_Nickname.TabIndex = 0;
             // 
             // STC_Nickname
             // 
@@ -102,7 +102,7 @@
             this.EDT_Nombre.Location = new System.Drawing.Point(99, 86);
             this.EDT_Nombre.Name = "EDT_Nombre";
             this.EDT_Nombre.Size = new System.Drawing.Size(193, 23);
-            this.EDT_Nombre.TabIndex = 41;
+            this.EDT_Nombre.TabIndex = 1;
             // 
             // EDT_aMaterno
             // 
@@ -110,7 +110,7 @@
             this.EDT_aMaterno.Location = new System.Drawing.Point(99, 147);
             this.EDT_aMaterno.Name = "EDT_aMaterno";
             this.EDT_aMaterno.Size = new System.Drawing.Size(193, 23);
-            this.EDT_aMaterno.TabIndex = 45;
+            this.EDT_aMaterno.TabIndex = 3;
             // 
             // STC_aMaterno
             // 
@@ -128,7 +128,7 @@
             this.EDT_aPaterno.Location = new System.Drawing.Point(99, 116);
             this.EDT_aPaterno.Name = "EDT_aPaterno";
             this.EDT_aPaterno.Size = new System.Drawing.Size(193, 23);
-            this.EDT_aPaterno.TabIndex = 43;
+            this.EDT_aPaterno.TabIndex = 2;
             // 
             // STC_aPaterno
             // 
@@ -151,7 +151,7 @@
             this.BTN_Cerrar.Location = new System.Drawing.Point(240, 205);
             this.BTN_Cerrar.Name = "BTN_Cerrar";
             this.BTN_Cerrar.Size = new System.Drawing.Size(52, 52);
-            this.BTN_Cerrar.TabIndex = 48;
+            this.BTN_Cerrar.TabIndex = 6;
             this.BTN_Cerrar.UseVisualStyleBackColor = false;
             this.BTN_Cerrar.Click += new System.EventHandler(this.BTN_Cerrar_Click);
             // 
@@ -166,7 +166,7 @@
             this.BTN_Aceptar.Location = new System.Drawing.Point(182, 205);
             this.BTN_Aceptar.Name = "BTN_Aceptar";
             this.BTN_Aceptar.Size = new System.Drawing.Size(52, 52);
-            this.BTN_Aceptar.TabIndex = 47;
+            this.BTN_Aceptar.TabIndex = 5;
             this.BTN_Aceptar.UseVisualStyleBackColor = false;
             this.BTN_Aceptar.Click += new System.EventHandler(this.BTN_Aceptar_Click);
             // 
@@ -176,7 +176,7 @@
             this.EDT_Password.Location = new System.Drawing.Point(99, 176);
             this.EDT_Password.Name = "EDT_Password";
             this.EDT_Password.Size = new System.Drawing.Size(193, 23);
-            this.EDT_Password.TabIndex = 49;
+            this.EDT_Password.TabIndex = 4;
             // 
             // STC_Contrasena
             // 

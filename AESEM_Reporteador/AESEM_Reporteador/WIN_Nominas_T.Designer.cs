@@ -28,18 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WIN_Nominas_T));
             this.BTN_Adjuntar = new System.Windows.Forms.Button();
             this.EDT_Ruta = new System.Windows.Forms.TextBox();
             this.BTN_ExportarXLS = new System.Windows.Forms.Button();
             this.BTN_ExportarPDF = new System.Windows.Forms.Button();
             this.STC_AdjuntarArchivo = new System.Windows.Forms.Label();
-            this.EDT_Empresa = new System.Windows.Forms.TextBox();
             this.STC_Empresa = new System.Windows.Forms.Label();
-            this.BTN_LupaEmpresa = new System.Windows.Forms.Button();
             this.DGV_Tabla = new System.Windows.Forms.DataGridView();
             this.COL_IdEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.COL_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +48,7 @@
             this.PANEL_Encabezado = new System.Windows.Forms.Panel();
             this.STC_Titulo = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.CBOX_Empresa = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Tabla)).BeginInit();
             this.PANEL_Encabezado.SuspendLayout();
             this.SuspendLayout();
@@ -101,14 +100,6 @@
             this.STC_AdjuntarArchivo.TabIndex = 10;
             this.STC_AdjuntarArchivo.Text = "Adjuntar Archivo";
             // 
-            // EDT_Empresa
-            // 
-            this.EDT_Empresa.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EDT_Empresa.Location = new System.Drawing.Point(120, 59);
-            this.EDT_Empresa.Name = "EDT_Empresa";
-            this.EDT_Empresa.Size = new System.Drawing.Size(269, 23);
-            this.EDT_Empresa.TabIndex = 11;
-            // 
             // STC_Empresa
             // 
             this.STC_Empresa.AutoSize = true;
@@ -119,15 +110,6 @@
             this.STC_Empresa.TabIndex = 12;
             this.STC_Empresa.Text = "Empresa";
             // 
-            // BTN_LupaEmpresa
-            // 
-            this.BTN_LupaEmpresa.Location = new System.Drawing.Point(395, 59);
-            this.BTN_LupaEmpresa.Name = "BTN_LupaEmpresa";
-            this.BTN_LupaEmpresa.Size = new System.Drawing.Size(24, 24);
-            this.BTN_LupaEmpresa.TabIndex = 13;
-            this.BTN_LupaEmpresa.UseVisualStyleBackColor = true;
-            this.BTN_LupaEmpresa.Click += new System.EventHandler(this.BTN_LupaEmpresa_Click);
-            // 
             // DGV_Tabla
             // 
             this.DGV_Tabla.AllowUserToAddRows = false;
@@ -135,14 +117,14 @@
             this.DGV_Tabla.AllowUserToOrderColumns = true;
             this.DGV_Tabla.BackgroundColor = System.Drawing.Color.DarkGray;
             this.DGV_Tabla.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DGV_Tabla.ColumnHeadersHeight = 30;
             this.DGV_Tabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.COL_IdEmpleado,
@@ -155,21 +137,21 @@
             this.DGV_Tabla.Location = new System.Drawing.Point(16, 134);
             this.DGV_Tabla.Name = "DGV_Tabla";
             this.DGV_Tabla.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Tabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Tabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DGV_Tabla.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Leelawadee UI", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.DGV_Tabla.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Leelawadee UI", 9F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.DGV_Tabla.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.DGV_Tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_Tabla.Size = new System.Drawing.Size(771, 193);
             this.DGV_Tabla.TabIndex = 37;
@@ -228,6 +210,7 @@
             this.button1.Size = new System.Drawing.Size(52, 52);
             this.button1.TabIndex = 39;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // PANEL_Encabezado
             // 
@@ -269,18 +252,28 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = false;
             // 
+            // CBOX_Empresa
+            // 
+            this.CBOX_Empresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBOX_Empresa.Font = new System.Drawing.Font("Leelawadee UI", 9F);
+            this.CBOX_Empresa.FormattingEnabled = true;
+            this.CBOX_Empresa.Location = new System.Drawing.Point(120, 56);
+            this.CBOX_Empresa.Name = "CBOX_Empresa";
+            this.CBOX_Empresa.Size = new System.Drawing.Size(435, 23);
+            this.CBOX_Empresa.TabIndex = 42;
+            this.CBOX_Empresa.SelectedIndexChanged += new System.EventHandler(this.CBOX_Empresa_SelectedIndexChanged);
+            // 
             // WIN_Nominas_T
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(915, 398);
+            this.Controls.Add(this.CBOX_Empresa);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.PANEL_Encabezado);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.DGV_Tabla);
-            this.Controls.Add(this.BTN_LupaEmpresa);
             this.Controls.Add(this.STC_Empresa);
-            this.Controls.Add(this.EDT_Empresa);
             this.Controls.Add(this.STC_AdjuntarArchivo);
             this.Controls.Add(this.BTN_ExportarPDF);
             this.Controls.Add(this.BTN_ExportarXLS);
@@ -289,6 +282,7 @@
             this.MaximizeBox = false;
             this.Name = "WIN_Nominas_T";
             this.Text = "Exportador";
+            this.Load += new System.EventHandler(this.WIN_Nominas_T_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Tabla)).EndInit();
             this.PANEL_Encabezado.ResumeLayout(false);
             this.PANEL_Encabezado.PerformLayout();
@@ -303,9 +297,7 @@
         private System.Windows.Forms.Button BTN_ExportarXLS;
         private System.Windows.Forms.Button BTN_ExportarPDF;
         private System.Windows.Forms.Label STC_AdjuntarArchivo;
-        private System.Windows.Forms.TextBox EDT_Empresa;
         private System.Windows.Forms.Label STC_Empresa;
-        private System.Windows.Forms.Button BTN_LupaEmpresa;
         private System.Windows.Forms.DataGridView DGV_Tabla;
         private System.Windows.Forms.DataGridViewTextBoxColumn COL_IdEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn COL_Nombre;
@@ -316,5 +308,6 @@
         private System.Windows.Forms.Panel PANEL_Encabezado;
         private System.Windows.Forms.Label STC_Titulo;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox CBOX_Empresa;
     }
 }
