@@ -13,6 +13,7 @@ namespace AESEM_Reporteador
 {
     public partial class WIN_Empresas_T : Form
     {
+        // Variables y objetos globales
         ConexionSQL BD = new ConexionSQL();
 
         // Método constructor
@@ -32,7 +33,7 @@ namespace AESEM_Reporteador
         private void BTN_Modificar_Click(object sender, EventArgs e)
         {
             // Instanciamos objeto de la ventana para poder abrirla
-            WIN_Empresas_F Window = new WIN_Empresas_F(1);
+            WIN_Empresas_F Window = new WIN_Empresas_F((int)DGV_Tabla.CurrentRow.Cells[0].Value);
             Window.Show();
             Refrescar();
         }
@@ -54,27 +55,42 @@ namespace AESEM_Reporteador
         {
             BD.conexion.CreateCommand();
             SqlCommand cmd = BD.conexion.CreateCommand();
-            cmd.CommandText = "Select Id_Empresas, Sindicato, Lugar, TipoPago From EMPRESAS";
+            cmd.CommandText = "Select Id_Empresas, Sindicato, Lugar, Pago = \n" +
+                "   Case TipoPago\n" +
+                "       WHEN 1 THEN 'Semanal'\n" +
+                "       WHEN 2 THEN 'Catorcenal'\n" +
+                "       WHEN 3 THEN 'Quincenal'\n" +
+                "       WHEN 4 THEN 'Mensual'\n" +
+                "   End\n" +
+                "From EMPRESAS \n" +
+                "Order By Id_Empresas\n";
+
             cmd.ExecuteNonQuery();
             SqlDataAdapter Adaptador = new SqlDataAdapter();
             Adaptador.SelectCommand = cmd;
             var Data = new DataTable();
-            Data.Clear();
             Adaptador.Fill(Data);
             DGV_Tabla.DataSource = Data;
-           
 
+            //Data.Clear();
+        }
 
-            //DGV_Tabla.BindingContext = Data;
+        private void DGV_Tabla_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
 
-            //if (MiConexion.State != ConnectionState.Open)
-            //    MiConexion.Open();
-            //SqlCommand cmd = MiConexion.CreateCommand();
-            //cmd.CommandText = "Select * From EMPRESAS";
-
-            //DataTable Tabla = new DataTable();
-            //SqlDataAdapter Adaptador = new SqlDataAdapter(cmd);
-            //Adaptador.Fill(Tabla);
+        private void BTN_Eliminar_Click(object sender, EventArgs e)
+        {
+            // Se verifica la respuesta
+            if (MessageBox.Show("¿Desea eliminar el registro seleccionado?", "Eliminar registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                // Se estructura el query para eliminar el registro
+                SqlCommand cmd = BD.conexion.CreateCommand();
+                cmd.CommandText = "Delete From EMPRESAS Where Id_Empresas = " + (int)DGV_Tabla.CurrentRow.Cells[0].Value;
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Registro eliminado con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Refrescar();
+            }
         }
     }
 }
