@@ -44,8 +44,10 @@
             this.BTN_Eliminar = new System.Windows.Forms.Button();
             this.BTN_Modificar = new System.Windows.Forms.Button();
             this.BTN_Agregar = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.PANEL_Encabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Tabla)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // PANEL_Encabezado
@@ -91,7 +93,6 @@
             this.COL_Sindicato,
             this.COL_Lugar,
             this.COL_TipoPago});
-            this.DGV_Tabla.EnableHeadersVisualStyles = false;
             this.DGV_Tabla.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.DGV_Tabla.Location = new System.Drawing.Point(16, 47);
             this.DGV_Tabla.Name = "DGV_Tabla";
@@ -226,11 +227,20 @@
             this.BTN_Agregar.UseVisualStyleBackColor = false;
             this.BTN_Agregar.Click += new System.EventHandler(this.BTN_Agregar_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(141, 294);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 37;
+            // 
             // WIN_Empresas_T
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(817, 358);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.DGV_Tabla);
             this.Controls.Add(this.BTN_Cerrar);
             this.Controls.Add(this.BTN_Aceptar);
@@ -245,6 +255,7 @@
             this.PANEL_Encabezado.ResumeLayout(false);
             this.PANEL_Encabezado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Tabla)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -262,5 +273,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn COL_Sindicato;
         private System.Windows.Forms.DataGridViewTextBoxColumn COL_Lugar;
         private System.Windows.Forms.DataGridViewTextBoxColumn COL_TipoPago;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

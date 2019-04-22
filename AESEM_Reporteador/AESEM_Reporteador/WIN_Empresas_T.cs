@@ -59,8 +59,8 @@ namespace AESEM_Reporteador
             SqlDataAdapter Adaptador = new SqlDataAdapter();
             Adaptador.SelectCommand = cmd;
             var Data = new DataTable();
-            Data.Clear();
             Adaptador.Fill(Data);
+            dataGridView1.DataSource = Data;
             DGV_Tabla.DataSource = Data;
            
 
