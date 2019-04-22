@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\..\Downloads\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AESEMDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AESEMDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Cls_ClaseExcel.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -66,6 +74,12 @@
     </Compile>
     <Compile Include="WIN_Empresas_T.Designer.cs">
       <DependentUpon>WIN_Empresas_T.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WIN_Exportar_P.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WIN_Exportar_P.Designer.cs">
+      <DependentUpon>WIN_Exportar_P.cs</DependentUpon>
     </Compile>
     <Compile Include="WIN_Login_F.cs">
       <SubType>Form</SubType>
@@ -104,6 +118,9 @@
     <EmbeddedResource Include="WIN_Empresas_T.resx">
       <DependentUpon>WIN_Empresas_T.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WIN_Exportar_P.resx">
+      <DependentUpon>WIN_Exportar_P.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WIN_Login_F.resx">
       <DependentUpon>WIN_Login_F.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +130,17 @@
     <EmbeddedResource Include="Z_DummyDeControles.resx">
       <DependentUpon>Z_DummyDeControles.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="AESEMDataSet.xsc">
+      <DependentUpon>AESEMDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AESEMDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AESEMDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AESEMDataSet.xss">
+      <DependentUpon>AESEMDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -128,6 +156,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo AESEM.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
