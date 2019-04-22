@@ -58,5 +58,16 @@ namespace AESEM_Reporteador.Properties {
                 this["Testing"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=25.0.102.239\\SQLEXPRESS;Initial Catalog=AESEM;Persist Security Info=T" +
+            "rue;User ID=sa;Password=admin")]
+        public string AESEMConnectionString {
+            get {
+                return ((string)(this["AESEMConnectionString"]));
+            }
+        }
     }
 }
