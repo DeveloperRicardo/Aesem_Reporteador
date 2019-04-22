@@ -15,7 +15,6 @@ namespace AESEM_Reporteador
     {
         // Variables y objetos globales
         ConexionSQL BD = new ConexionSQL();
-
         // Método constructor
         public WIN_Empresas_T()
         {
@@ -26,7 +25,7 @@ namespace AESEM_Reporteador
         {
             // Instanciamos objeto de la ventana para poder abrirla
             WIN_Empresas_F Window = new WIN_Empresas_F();
-            Window.Show();
+            Window.ShowDialog();
             Refrescar();
         }
 
@@ -34,7 +33,7 @@ namespace AESEM_Reporteador
         {
             // Instanciamos objeto de la ventana para poder abrirla
             WIN_Empresas_F Window = new WIN_Empresas_F((int)DGV_Tabla.CurrentRow.Cells[0].Value);
-            Window.Show();
+            Window.ShowDialog();
             Refrescar();
         }
 
@@ -71,8 +70,6 @@ namespace AESEM_Reporteador
             var Data = new DataTable();
             Adaptador.Fill(Data);
             DGV_Tabla.DataSource = Data;
-
-            //Data.Clear();
         }
 
         private void DGV_Tabla_CellContentClick(object sender, DataGridViewCellEventArgs e)
