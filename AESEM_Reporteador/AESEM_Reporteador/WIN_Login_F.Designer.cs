@@ -213,7 +213,10 @@
             this.Controls.Add(this.EDT_Usuario);
             this.Controls.Add(this.STC_Usuario);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "WIN_Login_F";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Conexión a Servidor";
             this.Load += new System.EventHandler(this.WIN_Login_F_Load);
             this.PANEL_Encabezado.ResumeLayout(false);

@@ -69,5 +69,17 @@ namespace AESEM_Reporteador.Properties {
                 return ((string)(this["AESEMConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ConexionValida {
+            get {
+                return ((bool)(this["ConexionValida"]));
+            }
+            set {
+                this["ConexionValida"] = value;
+            }
+        }
     }
 }

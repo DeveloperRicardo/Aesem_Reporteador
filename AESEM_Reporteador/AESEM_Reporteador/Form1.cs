@@ -23,7 +23,11 @@ namespace AESEM_Reporteador
 
         private void WIN_LogIn_Load(object sender, EventArgs e)
         {
-            
+            Conexion();
+        }
+
+        public void Conexion()
+        {
             if (BD.Conexion(true))
             {
                 BD.conexion.CreateCommand();
@@ -36,7 +40,16 @@ namespace AESEM_Reporteador
                 CBOX_Usuario.DataSource = ds;
                 CBOX_Usuario.ValueMember = "Id_Usuarios";
                 CBOX_Usuario.DisplayMember = "Nickname";
-            }          
+            }
+            else
+            {
+                CBOX_Usuario.Enabled = false;
+                EDT_Contrasena.Enabled = false;
+                BTN_Acceder.Enabled = false;
+                BTN_Salir.Enabled = false;
+                IMG_Icono.Visible = true;
+                STC_MensajeConexion.Visible = true;
+            }
         }
 
         private void BTN_Salir_Click(object sender, EventArgs e)
@@ -81,24 +94,14 @@ namespace AESEM_Reporteador
                 return true;
         }
 
-        private void BTN_Registrar_Click(object sender, EventArgs e)
-        {
-            // Verifica que los campos tengan información
-            if (ValidarCampos())
-            {
-
-            }
-            else
-            {
-                // Muestra un mensaje donde indica que hay un error
-                Glo.Mensajes(3);
-            }
-        }
-
         private void BTN_ProbarConexion_Click(object sender, EventArgs e)
         {
             WIN_Login_F Login = new WIN_Login_F(true);
             Login.Show();
+            if (Settings.Default.ConexionValida == true)
+            {
+                this.Refresh();
+            }           
         }
     }
 }

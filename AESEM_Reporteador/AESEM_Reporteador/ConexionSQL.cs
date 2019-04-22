@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.IO;
+using AESEM_Reporteador.Properties;
 
 namespace AESEM_Reporteador
 {
@@ -22,14 +23,17 @@ namespace AESEM_Reporteador
             {
                 case true:
                     try
-                    {
+                    {                        
                         conexion.Open();
                         Exito = true;
+                        Settings.Default.ConexionValida = true;
+
                     }
                     catch (Exception)
                     {
                         Glo.Mensajes(2);
                         Exito = false;
+                        Settings.Default.ConexionValida = false;
                     }
                     break;
 

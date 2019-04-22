@@ -19,5 +19,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=25.0.102.239\SQLEXPRESS;Initial Catalog=AESEM;Persist Security Info=True;User ID=sa;Password=admin</Value>
     </Setting>
+    <Setting Name="ConexionValida" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -92,15 +92,17 @@ namespace AESEM_Reporteador
             //For testing purposes only
             if (Settings.Default.Testing == true)
             {
-                DialogResult Pregunta = MessageBox.Show("Probar conexion con ini?", "FOR TESTING PURPOSES ONLY", MessageBoxButtons.YesNo);
-                if (Pregunta == DialogResult.Yes)
+               DialogResult Pregunta = MessageBox.Show("Desea probar la conexión con la configuración?", "AESEM", MessageBoxButtons.YesNo);
+               if (Pregunta == DialogResult.Yes)
                 {
+ //                   MessageBox.Show("Se probara la conexión con la configuración.", "AESEM", MessageBoxButtons.OK,MessageBoxIcon.Information);
                     try
                     {
                         using (SqlConnection Miconexionini = new SqlConnection(File.ReadAllText(path)))
                         {
                             Miconexionini.Open();
                             Glo.Mensajes(1);
+                            Settings.Default.ConexionValida = true;
                             Miconexionini.Close();
 
                         }
@@ -108,6 +110,7 @@ namespace AESEM_Reporteador
                     catch (Exception)
                     {
                         Glo.Mensajes(2);
+                        Settings.Default.ConexionValida = false;
                     }
                 }
             }
@@ -220,7 +223,7 @@ namespace AESEM_Reporteador
         {
             if (Settings.Default.ConexionGuardada == false)
             {
-                this.Close();
+                this.Close();               
             }
             else
             {

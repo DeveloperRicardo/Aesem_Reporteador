@@ -29,29 +29,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WIN_LogIn));
-            this.IMG_Logo = new System.Windows.Forms.PictureBox();
             this.LBL_Usuario = new System.Windows.Forms.Label();
             this.LBL_Contrasena = new System.Windows.Forms.Label();
             this.EDT_Contrasena = new System.Windows.Forms.TextBox();
             this.PANEL_Encabezado = new System.Windows.Forms.Panel();
             this.STC_Titulo = new System.Windows.Forms.Label();
-            this.BTN_Salir = new System.Windows.Forms.Button();
-            this.BTN_Acceder = new System.Windows.Forms.Button();
             this.CBOX_Usuario = new System.Windows.Forms.ComboBox();
             this.BTN_ProbarConexion = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.IMG_Logo)).BeginInit();
+            this.BTN_Salir = new System.Windows.Forms.Button();
+            this.BTN_Acceder = new System.Windows.Forms.Button();
+            this.IMG_Logo = new System.Windows.Forms.PictureBox();
+            this.IMG_Icono = new System.Windows.Forms.PictureBox();
+            this.STC_MensajeConexion = new System.Windows.Forms.Label();
             this.PANEL_Encabezado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IMG_Logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IMG_Icono)).BeginInit();
             this.SuspendLayout();
-            // 
-            // IMG_Logo
-            // 
-            this.IMG_Logo.Image = ((System.Drawing.Image)(resources.GetObject("IMG_Logo.Image")));
-            this.IMG_Logo.Location = new System.Drawing.Point(21, 52);
-            this.IMG_Logo.Name = "IMG_Logo";
-            this.IMG_Logo.Size = new System.Drawing.Size(163, 134);
-            this.IMG_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.IMG_Logo.TabIndex = 0;
-            this.IMG_Logo.TabStop = false;
             // 
             // LBL_Usuario
             // 
@@ -78,7 +71,7 @@
             this.EDT_Contrasena.Font = new System.Drawing.Font("Leelawadee", 14F);
             this.EDT_Contrasena.Location = new System.Drawing.Point(212, 150);
             this.EDT_Contrasena.Name = "EDT_Contrasena";
-            this.EDT_Contrasena.Size = new System.Drawing.Size(253, 30);
+            this.EDT_Contrasena.Size = new System.Drawing.Size(379, 30);
             this.EDT_Contrasena.TabIndex = 2;
             this.EDT_Contrasena.UseSystemPasswordChar = true;
             // 
@@ -91,7 +84,7 @@
             this.PANEL_Encabezado.Location = new System.Drawing.Point(0, 0);
             this.PANEL_Encabezado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PANEL_Encabezado.Name = "PANEL_Encabezado";
-            this.PANEL_Encabezado.Size = new System.Drawing.Size(482, 39);
+            this.PANEL_Encabezado.Size = new System.Drawing.Size(604, 39);
             this.PANEL_Encabezado.TabIndex = 30;
             // 
             // STC_Titulo
@@ -105,6 +98,34 @@
             this.STC_Titulo.TabIndex = 31;
             this.STC_Titulo.Text = "Acceso al Sistema";
             // 
+            // CBOX_Usuario
+            // 
+            this.CBOX_Usuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBOX_Usuario.Font = new System.Drawing.Font("Leelawadee", 14F);
+            this.CBOX_Usuario.FormattingEnabled = true;
+            this.CBOX_Usuario.Location = new System.Drawing.Point(212, 78);
+            this.CBOX_Usuario.Name = "CBOX_Usuario";
+            this.CBOX_Usuario.Size = new System.Drawing.Size(379, 31);
+            this.CBOX_Usuario.TabIndex = 1;
+            // 
+            // BTN_ProbarConexion
+            // 
+            this.BTN_ProbarConexion.BackColor = System.Drawing.Color.Transparent;
+            this.BTN_ProbarConexion.FlatAppearance.BorderSize = 0;
+            this.BTN_ProbarConexion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTN_ProbarConexion.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTN_ProbarConexion.Image = ((System.Drawing.Image)(resources.GetObject("BTN_ProbarConexion.Image")));
+            this.BTN_ProbarConexion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BTN_ProbarConexion.Location = new System.Drawing.Point(318, 196);
+            this.BTN_ProbarConexion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BTN_ProbarConexion.Name = "BTN_ProbarConexion";
+            this.BTN_ProbarConexion.Size = new System.Drawing.Size(160, 41);
+            this.BTN_ProbarConexion.TabIndex = 3;
+            this.BTN_ProbarConexion.Text = "Configurar Conexión";
+            this.BTN_ProbarConexion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BTN_ProbarConexion.UseVisualStyleBackColor = false;
+            this.BTN_ProbarConexion.Click += new System.EventHandler(this.BTN_ProbarConexion_Click);
+            // 
             // BTN_Salir
             // 
             this.BTN_Salir.BackColor = System.Drawing.Color.Transparent;
@@ -113,7 +134,7 @@
             this.BTN_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTN_Salir.ForeColor = System.Drawing.Color.Transparent;
             this.BTN_Salir.Image = ((System.Drawing.Image)(resources.GetObject("BTN_Salir.Image")));
-            this.BTN_Salir.Location = new System.Drawing.Point(413, 187);
+            this.BTN_Salir.Location = new System.Drawing.Point(540, 190);
             this.BTN_Salir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_Salir.Name = "BTN_Salir";
             this.BTN_Salir.Size = new System.Drawing.Size(52, 52);
@@ -129,7 +150,7 @@
             this.BTN_Acceder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTN_Acceder.ForeColor = System.Drawing.Color.Transparent;
             this.BTN_Acceder.Image = ((System.Drawing.Image)(resources.GetObject("BTN_Acceder.Image")));
-            this.BTN_Acceder.Location = new System.Drawing.Point(357, 187);
+            this.BTN_Acceder.Location = new System.Drawing.Point(484, 190);
             this.BTN_Acceder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_Acceder.Name = "BTN_Acceder";
             this.BTN_Acceder.Size = new System.Drawing.Size(52, 52);
@@ -137,39 +158,45 @@
             this.BTN_Acceder.UseVisualStyleBackColor = false;
             this.BTN_Acceder.Click += new System.EventHandler(this.BTN_Acceder_Click);
             // 
-            // CBOX_Usuario
+            // IMG_Logo
             // 
-            this.CBOX_Usuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBOX_Usuario.Font = new System.Drawing.Font("Leelawadee", 14F);
-            this.CBOX_Usuario.FormattingEnabled = true;
-            this.CBOX_Usuario.Location = new System.Drawing.Point(212, 78);
-            this.CBOX_Usuario.Name = "CBOX_Usuario";
-            this.CBOX_Usuario.Size = new System.Drawing.Size(253, 31);
-            this.CBOX_Usuario.TabIndex = 1;
+            this.IMG_Logo.Image = ((System.Drawing.Image)(resources.GetObject("IMG_Logo.Image")));
+            this.IMG_Logo.Location = new System.Drawing.Point(21, 52);
+            this.IMG_Logo.Name = "IMG_Logo";
+            this.IMG_Logo.Size = new System.Drawing.Size(163, 134);
+            this.IMG_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.IMG_Logo.TabIndex = 0;
+            this.IMG_Logo.TabStop = false;
             // 
-            // BTN_ProbarConexion
+            // IMG_Icono
             // 
-            this.BTN_ProbarConexion.BackColor = System.Drawing.Color.Transparent;
-            this.BTN_ProbarConexion.FlatAppearance.BorderSize = 0;
-            this.BTN_ProbarConexion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTN_ProbarConexion.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_ProbarConexion.Image = ((System.Drawing.Image)(resources.GetObject("BTN_ProbarConexion.Image")));
-            this.BTN_ProbarConexion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BTN_ProbarConexion.Location = new System.Drawing.Point(21, 193);
-            this.BTN_ProbarConexion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BTN_ProbarConexion.Name = "BTN_ProbarConexion";
-            this.BTN_ProbarConexion.Size = new System.Drawing.Size(142, 41);
-            this.BTN_ProbarConexion.TabIndex = 3;
-            this.BTN_ProbarConexion.Text = "Probar Conexión";
-            this.BTN_ProbarConexion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BTN_ProbarConexion.UseVisualStyleBackColor = false;
-            this.BTN_ProbarConexion.Click += new System.EventHandler(this.BTN_ProbarConexion_Click);
+            this.IMG_Icono.Image = ((System.Drawing.Image)(resources.GetObject("IMG_Icono.Image")));
+            this.IMG_Icono.Location = new System.Drawing.Point(21, 192);
+            this.IMG_Icono.Name = "IMG_Icono";
+            this.IMG_Icono.Size = new System.Drawing.Size(52, 50);
+            this.IMG_Icono.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.IMG_Icono.TabIndex = 31;
+            this.IMG_Icono.TabStop = false;
+            this.IMG_Icono.Visible = false;
+            // 
+            // STC_MensajeConexion
+            // 
+            this.STC_MensajeConexion.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Bold);
+            this.STC_MensajeConexion.Location = new System.Drawing.Point(79, 193);
+            this.STC_MensajeConexion.Name = "STC_MensajeConexion";
+            this.STC_MensajeConexion.Size = new System.Drawing.Size(226, 46);
+            this.STC_MensajeConexion.TabIndex = 0;
+            this.STC_MensajeConexion.Text = "Error en la conexión con el servidor. Favor de verificar la configuración.";
+            this.STC_MensajeConexion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.STC_MensajeConexion.Visible = false;
             // 
             // WIN_LogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(481, 248);
+            this.ClientSize = new System.Drawing.Size(603, 248);
+            this.Controls.Add(this.IMG_Icono);
+            this.Controls.Add(this.STC_MensajeConexion);
             this.Controls.Add(this.BTN_ProbarConexion);
             this.Controls.Add(this.CBOX_Usuario);
             this.Controls.Add(this.BTN_Salir);
@@ -180,12 +207,16 @@
             this.Controls.Add(this.LBL_Usuario);
             this.Controls.Add(this.IMG_Logo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "WIN_LogIn";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.WIN_LogIn_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.IMG_Logo)).EndInit();
             this.PANEL_Encabezado.ResumeLayout(false);
             this.PANEL_Encabezado.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IMG_Logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IMG_Icono)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,6 +234,8 @@
         private System.Windows.Forms.Button BTN_Acceder;
         private System.Windows.Forms.ComboBox CBOX_Usuario;
         private System.Windows.Forms.Button BTN_ProbarConexion;
+        private System.Windows.Forms.PictureBox IMG_Icono;
+        private System.Windows.Forms.Label STC_MensajeConexion;
     }
 }
 
