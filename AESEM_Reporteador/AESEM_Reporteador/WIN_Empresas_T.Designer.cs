@@ -28,29 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WIN_Empresas_T));
             this.PANEL_Encabezado = new System.Windows.Forms.Panel();
             this.STC_Titulo = new System.Windows.Forms.Label();
             this.DGV_Tabla = new System.Windows.Forms.DataGridView();
+            this.COL_IdEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COL_Sindicato = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COL_Lugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COL_TipoPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BTN_Cerrar = new System.Windows.Forms.Button();
             this.BTN_Aceptar = new System.Windows.Forms.Button();
             this.BTN_Eliminar = new System.Windows.Forms.Button();
             this.BTN_Modificar = new System.Windows.Forms.Button();
             this.BTN_Agregar = new System.Windows.Forms.Button();
-<<<<<<< HEAD
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-=======
-            this.COL_IdEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COL_Sindicato = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COL_Lugar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COL_TipoPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
->>>>>>> Ricardo
             this.PANEL_Encabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Tabla)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // PANEL_Encabezado
@@ -82,14 +77,14 @@
             this.DGV_Tabla.AllowUserToOrderColumns = true;
             this.DGV_Tabla.BackgroundColor = System.Drawing.Color.DarkGray;
             this.DGV_Tabla.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGV_Tabla.ColumnHeadersHeight = 30;
             this.DGV_Tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.DGV_Tabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -101,28 +96,64 @@
             this.DGV_Tabla.Location = new System.Drawing.Point(16, 47);
             this.DGV_Tabla.Name = "DGV_Tabla";
             this.DGV_Tabla.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Tabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Tabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGV_Tabla.RowHeadersVisible = false;
             this.DGV_Tabla.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Leelawadee UI", 9F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.DGV_Tabla.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Leelawadee UI", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.DGV_Tabla.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.DGV_Tabla.RowTemplate.ReadOnly = true;
             this.DGV_Tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_Tabla.Size = new System.Drawing.Size(671, 242);
             this.DGV_Tabla.TabIndex = 36;
             this.DGV_Tabla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Tabla_CellContentClick);
+            // 
+            // COL_IdEmpresa
+            // 
+            this.COL_IdEmpresa.DataPropertyName = "Id_Empresas";
+            this.COL_IdEmpresa.Frozen = true;
+            this.COL_IdEmpresa.HeaderText = "IdEmpresa";
+            this.COL_IdEmpresa.Name = "COL_IdEmpresa";
+            this.COL_IdEmpresa.ReadOnly = true;
+            this.COL_IdEmpresa.Visible = false;
+            // 
+            // COL_Sindicato
+            // 
+            this.COL_Sindicato.DataPropertyName = "Sindicato";
+            this.COL_Sindicato.Frozen = true;
+            this.COL_Sindicato.HeaderText = "Sindicato";
+            this.COL_Sindicato.Name = "COL_Sindicato";
+            this.COL_Sindicato.ReadOnly = true;
+            this.COL_Sindicato.Width = 350;
+            // 
+            // COL_Lugar
+            // 
+            this.COL_Lugar.DataPropertyName = "Lugar";
+            this.COL_Lugar.Frozen = true;
+            this.COL_Lugar.HeaderText = "Lugar";
+            this.COL_Lugar.Name = "COL_Lugar";
+            this.COL_Lugar.ReadOnly = true;
+            this.COL_Lugar.Width = 200;
+            // 
+            // COL_TipoPago
+            // 
+            this.COL_TipoPago.DataPropertyName = "Pago";
+            this.COL_TipoPago.Frozen = true;
+            this.COL_TipoPago.HeaderText = "Tipo de Pago";
+            this.COL_TipoPago.Name = "COL_TipoPago";
+            this.COL_TipoPago.ReadOnly = true;
+            this.COL_TipoPago.Width = 120;
             // 
             // BTN_Cerrar
             // 
@@ -204,58 +235,11 @@
             this.BTN_Agregar.UseVisualStyleBackColor = false;
             this.BTN_Agregar.Click += new System.EventHandler(this.BTN_Agregar_Click);
             // 
-<<<<<<< HEAD
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(141, 294);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 37;
-=======
-            // COL_IdEmpresa
-            // 
-            this.COL_IdEmpresa.DataPropertyName = "Id_Empresas";
-            this.COL_IdEmpresa.Frozen = true;
-            this.COL_IdEmpresa.HeaderText = "IdEmpresa";
-            this.COL_IdEmpresa.Name = "COL_IdEmpresa";
-            this.COL_IdEmpresa.ReadOnly = true;
-            this.COL_IdEmpresa.Visible = false;
-            // 
-            // COL_Sindicato
-            // 
-            this.COL_Sindicato.DataPropertyName = "Sindicato";
-            this.COL_Sindicato.Frozen = true;
-            this.COL_Sindicato.HeaderText = "Sindicato";
-            this.COL_Sindicato.Name = "COL_Sindicato";
-            this.COL_Sindicato.ReadOnly = true;
-            this.COL_Sindicato.Width = 350;
-            // 
-            // COL_Lugar
-            // 
-            this.COL_Lugar.DataPropertyName = "Lugar";
-            this.COL_Lugar.Frozen = true;
-            this.COL_Lugar.HeaderText = "Lugar";
-            this.COL_Lugar.Name = "COL_Lugar";
-            this.COL_Lugar.ReadOnly = true;
-            this.COL_Lugar.Width = 200;
-            // 
-            // COL_TipoPago
-            // 
-            this.COL_TipoPago.DataPropertyName = "Pago";
-            this.COL_TipoPago.Frozen = true;
-            this.COL_TipoPago.HeaderText = "Tipo de Pago";
-            this.COL_TipoPago.Name = "COL_TipoPago";
-            this.COL_TipoPago.ReadOnly = true;
-            this.COL_TipoPago.Width = 120;
->>>>>>> Ricardo
-            // 
             // WIN_Empresas_T
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(817, 358);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.DGV_Tabla);
             this.Controls.Add(this.BTN_Cerrar);
             this.Controls.Add(this.BTN_Aceptar);
@@ -270,7 +254,6 @@
             this.PANEL_Encabezado.ResumeLayout(false);
             this.PANEL_Encabezado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Tabla)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -288,6 +271,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn COL_Sindicato;
         private System.Windows.Forms.DataGridViewTextBoxColumn COL_Lugar;
         private System.Windows.Forms.DataGridViewTextBoxColumn COL_TipoPago;
-        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

@@ -70,7 +70,6 @@ namespace AESEM_Reporteador
             Adaptador.SelectCommand = cmd;
             var Data = new DataTable();
             Adaptador.Fill(Data);
-            dataGridView1.DataSource = Data;
             DGV_Tabla.DataSource = Data;
 
             //Data.Clear();
