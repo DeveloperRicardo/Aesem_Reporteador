@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WIN_Usuarios_T));
             this.DGV_Tabla = new System.Windows.Forms.DataGridView();
+            this.COL_IdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COL_Nickname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COL_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PANEL_Encabezado = new System.Windows.Forms.Panel();
             this.STC_Titulo = new System.Windows.Forms.Label();
             this.BTN_Cerrar = new System.Windows.Forms.Button();
@@ -40,9 +43,6 @@
             this.BTN_Eliminar = new System.Windows.Forms.Button();
             this.BTN_Modificar = new System.Windows.Forms.Button();
             this.BTN_Agregar = new System.Windows.Forms.Button();
-            this.COL_IdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COL_Nickname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COL_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Tabla)).BeginInit();
             this.PANEL_Encabezado.SuspendLayout();
             this.SuspendLayout();
@@ -54,14 +54,14 @@
             this.DGV_Tabla.AllowUserToOrderColumns = true;
             this.DGV_Tabla.BackgroundColor = System.Drawing.Color.DarkGray;
             this.DGV_Tabla.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGV_Tabla.ColumnHeadersHeight = 30;
             this.DGV_Tabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.COL_IdUsuario,
@@ -72,24 +72,50 @@
             this.DGV_Tabla.Location = new System.Drawing.Point(15, 45);
             this.DGV_Tabla.Name = "DGV_Tabla";
             this.DGV_Tabla.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV_Tabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_Tabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGV_Tabla.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Leelawadee UI", 9F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.DGV_Tabla.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Leelawadee UI", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.DGV_Tabla.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.DGV_Tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_Tabla.Size = new System.Drawing.Size(352, 242);
             this.DGV_Tabla.TabIndex = 0;
+            // 
+            // COL_IdUsuario
+            // 
+            this.COL_IdUsuario.DataPropertyName = "Id_Usuarios";
+            this.COL_IdUsuario.Frozen = true;
+            this.COL_IdUsuario.HeaderText = "IdUsuario";
+            this.COL_IdUsuario.Name = "COL_IdUsuario";
+            this.COL_IdUsuario.ReadOnly = true;
+            this.COL_IdUsuario.Visible = false;
+            // 
+            // COL_Nickname
+            // 
+            this.COL_Nickname.DataPropertyName = "Nickname";
+            this.COL_Nickname.Frozen = true;
+            this.COL_Nickname.HeaderText = "Nickname";
+            this.COL_Nickname.Name = "COL_Nickname";
+            this.COL_Nickname.ReadOnly = true;
+            // 
+            // COL_Nombre
+            // 
+            this.COL_Nombre.DataPropertyName = "NombreCompleto";
+            this.COL_Nombre.Frozen = true;
+            this.COL_Nombre.HeaderText = "Nombre";
+            this.COL_Nombre.Name = "COL_Nombre";
+            this.COL_Nombre.ReadOnly = true;
+            this.COL_Nombre.Width = 250;
             // 
             // PANEL_Encabezado
             // 
@@ -193,32 +219,6 @@
             this.BTN_Agregar.UseVisualStyleBackColor = false;
             this.BTN_Agregar.Click += new System.EventHandler(this.BTN_Agregar_Click);
             // 
-            // COL_IdUsuario
-            // 
-            this.COL_IdUsuario.DataPropertyName = "Id_Usuarios";
-            this.COL_IdUsuario.Frozen = true;
-            this.COL_IdUsuario.HeaderText = "IdUsuario";
-            this.COL_IdUsuario.Name = "COL_IdUsuario";
-            this.COL_IdUsuario.ReadOnly = true;
-            this.COL_IdUsuario.Visible = false;
-            // 
-            // COL_Nickname
-            // 
-            this.COL_Nickname.DataPropertyName = "Nickname";
-            this.COL_Nickname.Frozen = true;
-            this.COL_Nickname.HeaderText = "Nickname";
-            this.COL_Nickname.Name = "COL_Nickname";
-            this.COL_Nickname.ReadOnly = true;
-            // 
-            // COL_Nombre
-            // 
-            this.COL_Nombre.DataPropertyName = "NombreCompleto";
-            this.COL_Nombre.Frozen = true;
-            this.COL_Nombre.HeaderText = "Nombre";
-            this.COL_Nombre.Name = "COL_Nombre";
-            this.COL_Nombre.ReadOnly = true;
-            this.COL_Nombre.Width = 250;
-            // 
             // WIN_Usuarios_T
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,9 +231,11 @@
             this.Controls.Add(this.BTN_Modificar);
             this.Controls.Add(this.BTN_Agregar);
             this.Controls.Add(this.PANEL_Encabezado);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "WIN_Usuarios_T";
-            this.Text = "WIN_Usuarios_T";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.WIN_Usuarios_T_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Tabla)).EndInit();
             this.PANEL_Encabezado.ResumeLayout(false);

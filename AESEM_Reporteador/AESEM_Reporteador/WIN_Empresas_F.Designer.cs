@@ -297,9 +297,11 @@
             this.Controls.Add(this.BTN_Cerrar);
             this.Controls.Add(this.BTN_Aceptar);
             this.Controls.Add(this.PANEL_Encabezado);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "WIN_Empresas_F";
-            this.Text = "WIN_Empresas_F";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Empresas";
             this.Load += new System.EventHandler(this.WIN_Empresas_F_Load);
             this.PANEL_Encabezado.ResumeLayout(false);
             this.PANEL_Encabezado.PerformLayout();

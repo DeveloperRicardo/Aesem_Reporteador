@@ -33,9 +33,9 @@
             this.STC_Titulo = new System.Windows.Forms.Label();
             this.TAB_General = new System.Windows.Forms.TabControl();
             this.TAB_Catalogos = new System.Windows.Forms.TabPage();
-            this.TAB_Reportes = new System.Windows.Forms.TabPage();
-            this.BTN_Empresas = new System.Windows.Forms.Button();
             this.BTN_Usuarios = new System.Windows.Forms.Button();
+            this.BTN_Empresas = new System.Windows.Forms.Button();
+            this.TAB_Reportes = new System.Windows.Forms.TabPage();
             this.BTN_Nominas = new System.Windows.Forms.Button();
             this.BTN_Cerrar = new System.Windows.Forms.Button();
             this.PANEL_Encabezado.SuspendLayout();
@@ -91,17 +91,18 @@
             this.TAB_Catalogos.Text = " Catálogos ";
             this.TAB_Catalogos.UseVisualStyleBackColor = true;
             // 
-            // TAB_Reportes
+            // BTN_Usuarios
             // 
-            this.TAB_Reportes.Controls.Add(this.BTN_Nominas);
-            this.TAB_Reportes.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TAB_Reportes.Location = new System.Drawing.Point(4, 26);
-            this.TAB_Reportes.Name = "TAB_Reportes";
-            this.TAB_Reportes.Padding = new System.Windows.Forms.Padding(3);
-            this.TAB_Reportes.Size = new System.Drawing.Size(550, 294);
-            this.TAB_Reportes.TabIndex = 1;
-            this.TAB_Reportes.Text = " Reportes ";
-            this.TAB_Reportes.UseVisualStyleBackColor = true;
+            this.BTN_Usuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BTN_Usuarios.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTN_Usuarios.ForeColor = System.Drawing.Color.White;
+            this.BTN_Usuarios.Location = new System.Drawing.Point(20, 63);
+            this.BTN_Usuarios.Name = "BTN_Usuarios";
+            this.BTN_Usuarios.Size = new System.Drawing.Size(101, 34);
+            this.BTN_Usuarios.TabIndex = 37;
+            this.BTN_Usuarios.Text = "Usuarios";
+            this.BTN_Usuarios.UseVisualStyleBackColor = false;
+            this.BTN_Usuarios.Click += new System.EventHandler(this.BTN_Usuarios_Click);
             // 
             // BTN_Empresas
             // 
@@ -116,18 +117,17 @@
             this.BTN_Empresas.UseVisualStyleBackColor = false;
             this.BTN_Empresas.Click += new System.EventHandler(this.BTN_Empresas_Click);
             // 
-            // BTN_Usuarios
+            // TAB_Reportes
             // 
-            this.BTN_Usuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.BTN_Usuarios.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_Usuarios.ForeColor = System.Drawing.Color.White;
-            this.BTN_Usuarios.Location = new System.Drawing.Point(20, 63);
-            this.BTN_Usuarios.Name = "BTN_Usuarios";
-            this.BTN_Usuarios.Size = new System.Drawing.Size(101, 34);
-            this.BTN_Usuarios.TabIndex = 37;
-            this.BTN_Usuarios.Text = "Usuarios";
-            this.BTN_Usuarios.UseVisualStyleBackColor = false;
-            this.BTN_Usuarios.Click += new System.EventHandler(this.BTN_Usuarios_Click);
+            this.TAB_Reportes.Controls.Add(this.BTN_Nominas);
+            this.TAB_Reportes.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TAB_Reportes.Location = new System.Drawing.Point(4, 26);
+            this.TAB_Reportes.Name = "TAB_Reportes";
+            this.TAB_Reportes.Padding = new System.Windows.Forms.Padding(3);
+            this.TAB_Reportes.Size = new System.Drawing.Size(550, 294);
+            this.TAB_Reportes.TabIndex = 1;
+            this.TAB_Reportes.Text = " Reportes ";
+            this.TAB_Reportes.UseVisualStyleBackColor = true;
             // 
             // BTN_Nominas
             // 
@@ -165,9 +165,11 @@
             this.Controls.Add(this.BTN_Cerrar);
             this.Controls.Add(this.TAB_General);
             this.Controls.Add(this.PANEL_Encabezado);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "WIN_Principal";
-            this.Text = "WIN_Principal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Principal";
             this.Load += new System.EventHandler(this.WIN_Principal_Load);
             this.PANEL_Encabezado.ResumeLayout(false);
             this.PANEL_Encabezado.PerformLayout();

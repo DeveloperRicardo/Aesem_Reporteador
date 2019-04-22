@@ -185,9 +185,11 @@
             this.Controls.Add(this.EDT_Nombre);
             this.Controls.Add(this.STC_Nombre);
             this.Controls.Add(this.PANEL_Encabezado);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "WIN_Nominas_F";
-            this.Text = "WIN_Nominas_F";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Nominas";
             this.Load += new System.EventHandler(this.WIN_Nominas_F_Load);
             this.PANEL_Encabezado.ResumeLayout(false);
             this.PANEL_Encabezado.PerformLayout();

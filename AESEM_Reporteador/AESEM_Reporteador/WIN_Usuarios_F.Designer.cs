@@ -207,9 +207,11 @@
             this.Controls.Add(this.EDT_Nickname);
             this.Controls.Add(this.STC_Nickname);
             this.Controls.Add(this.PANEL_Encabezado);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "WIN_Usuarios_F";
-            this.Text = "WIN_Usuarios_F";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.WIN_Usuarios_F_Load);
             this.PANEL_Encabezado.ResumeLayout(false);
             this.PANEL_Encabezado.PerformLayout();

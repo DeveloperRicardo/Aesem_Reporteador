@@ -86,6 +86,7 @@ namespace AESEM_Reporteador
                 FileStream archivo = File.Create(path);
                 Byte[] info = new UTF8Encoding(true).GetBytes(conexion);
                 archivo.Write(info, 0, info.Length);
+                archivo.Close();
             }
             Glo.Mensajes(6);
             Settings.Default.ConexionGuardada = true;
