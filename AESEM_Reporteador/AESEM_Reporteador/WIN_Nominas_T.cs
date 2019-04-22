@@ -66,5 +66,10 @@ namespace AESEM_Reporteador
         {
 
         }
+
+        private void DGV_Tabla_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
