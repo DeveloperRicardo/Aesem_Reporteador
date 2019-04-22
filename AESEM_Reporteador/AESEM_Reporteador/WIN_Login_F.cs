@@ -15,59 +15,34 @@ namespace AESEM_Reporteador
 {
     public partial class WIN_Login_F : Form
     {
-        private bool Testing = false;
+        bool Modificar = false;
         string conexion = "";
         string path = Environment.CurrentDirectory +  @"\Conexion.ini";
-        #region Mensajes
-        private void Mensajes(int Mensaje)
+        MetodosGlobales Glo = new MetodosGlobales();
+        public WIN_Login_F(bool Mod = false)
         {
-            switch (Mensaje)
-            {
-                case 1:
-                    MessageBox.Show("Conexión exitosa.", "AESEM", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    break;
-                case 2:
-                    MessageBox.Show("Conexión no exitosa.", "AESEM", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    break;
-                case 3:
-                    MessageBox.Show("Los campos no pueden estar vacios.", "AESEM", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    break;
-                case 4:
-                    MessageBox.Show("Ya existen todas las tablas.", "AESEM", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    break;
-                case 5:
-                    MessageBox.Show("Se han creado las tablas faltantes.", "AESEM", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    break;
-                case 6:
-                    MessageBox.Show("Se ha guardado la configuración.", "AESEM", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    break;
-            }
+            Modificar = Mod;
+            InitializeComponent();
+            CargarInformacion();
+        }
+
+        #region Validar Campos
+        private bool ValidarCampos()
+        {
+            // Verifica que los campos tengan información en ellos
+            if (EDT_Usuario.Text == "" || EDT_Contrasena.Text == "" || EDT_Servidor.Text == "" || EDT_BD.Text == "")
+                return false;
+            else
+                return true;
         }
         #endregion
-        public WIN_Login_F()
-        {
-            InitializeComponent();
-        }
+
+        #region ProbarConexion
         private void BTN_ProbarConexion_Click(object sender, EventArgs e)
         {
-            if (EDT_Usuario.Text == "")
+            if (!ValidarCampos())
             {
-                Mensajes(3);
-                return;
-            }
-            if (EDT_Contrasena.Text == "")
-            {
-                Mensajes(3);
-                return;
-            }
-            if (EDT_Servidor.Text == "")
-            {
-                Mensajes(3);
-                return;
-            }
-            if (EDT_BD.Text == "")
-            {
-                Mensajes(3);
+                Glo.Mensajes(3);
                 return;
             }
             try
@@ -79,36 +54,23 @@ namespace AESEM_Reporteador
                 using (SqlConnection Miconexion = new SqlConnection(conexion))
                 {
                     Miconexion.Open();
-                    Mensajes(1);
+                    Glo.Mensajes(1);
                     Miconexion.Close();
                 }
             }
             catch (Exception)
             {
-                Mensajes(2);
+                Glo.Mensajes(2);
             }
         }
+        #endregion
 
+        #region Guardar INI
         private void BTN_Guardar_Click(object sender, EventArgs e)
         {
-            if (EDT_Usuario.Text == "")
+            if (!ValidarCampos())
             {
-                Mensajes(3);
-                return;
-            }
-            if (EDT_Contrasena.Text == "")
-            {
-                Mensajes(3);
-                return;
-            }
-            if (EDT_Servidor.Text == "")
-            {
-                Mensajes(3);
-                return;
-            }
-            if (EDT_BD.Text == "")
-            {
-                Mensajes(3);
+                Glo.Mensajes(3);
                 return;
             }
             conexion = @"user id=" + EDT_Usuario.Text +
@@ -125,12 +87,12 @@ namespace AESEM_Reporteador
                 Byte[] info = new UTF8Encoding(true).GetBytes(conexion);
                 archivo.Write(info, 0, info.Length);
             }
-            Mensajes(6);
+            Glo.Mensajes(6);
             Settings.Default.ConexionGuardada = true;
             //For testing purposes only
-            if (Testing == true)
+            if (Settings.Default.Testing == true)
             {
-                DialogResult Pregunta = MessageBox.Show("Probar conexion con ini?", "AESEM", MessageBoxButtons.YesNo);
+                DialogResult Pregunta = MessageBox.Show("Probar conexion con ini?", "FOR TESTING PURPOSES ONLY", MessageBoxButtons.YesNo);
                 if (Pregunta == DialogResult.Yes)
                 {
                     try
@@ -138,26 +100,30 @@ namespace AESEM_Reporteador
                         using (SqlConnection Miconexionini = new SqlConnection(File.ReadAllText(path)))
                         {
                             Miconexionini.Open();
-                            Mensajes(1);
+                            Glo.Mensajes(1);
                             Miconexionini.Close();
 
                         }
                     }
                     catch (Exception)
                     {
-                        Mensajes(2);
+                        Glo.Mensajes(2);
                     }
                 }
             }
+            VerificarTablas();
         }
+        #endregion
 
-        private void BTN_Tablas_Click(object sender, EventArgs e)
+        #region Verificar y Crear Tablas
+        private void VerificarTablas()
         {
             try
             {
                 using (SqlConnection Miconexion = new SqlConnection(File.ReadAllText(path)))
                 {
-                    bool ExisteUSUARIOS = false, ExisteEMPRESAS = false, ExisteSUCURSALES = false;
+                    bool ExisteUSUARIOS = false, ExisteEMPRESAS = false, ExisteSUCURSALES = false, ExisteEMPLEADOS = false;
+                    int NumUsuarios = 0;
                     Miconexion.Open();
                     SqlCommand Query = Miconexion.CreateCommand();
                     //Verificar si existe la tabla USUARIOS
@@ -167,7 +133,9 @@ namespace AESEM_Reporteador
                     ExisteEMPRESAS = Convert.ToBoolean(Query.ExecuteScalar());
                     Query.CommandText = "IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'SUCURSALES') SELECT 'true' ELSE SELECT 'false'";
                     ExisteSUCURSALES = Convert.ToBoolean(Query.ExecuteScalar());
-                    if (!ExisteUSUARIOS || !ExisteEMPRESAS || !ExisteSUCURSALES)
+                    Query.CommandText = "IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'EMPLEADOS') SELECT 'true' ELSE SELECT 'false'";
+                    ExisteEMPLEADOS = Convert.ToBoolean(Query.ExecuteScalar());
+                    if (!ExisteUSUARIOS || !ExisteEMPRESAS || !ExisteSUCURSALES || !ExisteEMPLEADOS)
                     {
                         MessageBox.Show("Se crearan las tablas faltantes en la base de datos.", "AESEM", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         string QryTablas = "";
@@ -179,35 +147,94 @@ namespace AESEM_Reporteador
                         }
                         if (!ExisteEMPRESAS)
                         {
-                            QryTablas += "CREATE TABLE EMPRESAS (Id_Empresas int primary key identity, Nombre varchar(50), Logo image," +
-                                         "Lugar varchar(30),TipoPago int, Sindicato varchar(200), Concepto varchar(200), Comentarios varchar(255))";
+                            QryTablas += "CREATE TABLE EMPRESAS (Id_Empresas int primary key identity, Logo image,"+
+                                         "Lugar varchar(30),TipoPago int, Sindicato varchar(200), Concepto varchar(200), Ruta varchar(100))";
 
                         }
                         if (!ExisteSUCURSALES)
                         {
-                            QryTablas += "CREATE TABLE Sucursales(Id_Sucursales int primary key,Id_Empresas int foreign key references Empresas(Id_Empresas) on update cascade on delete cascade," +
+                            QryTablas += "CREATE TABLE SUCURSALES(Id_Sucursales int primary key,Id_Empresas int foreign key references Empresas(Id_Empresas) on update cascade on delete cascade," +
                                          "Nombre varchar(30), Direccion varchar(50))";
+                        }
+                        if (!ExisteEMPLEADOS)
+                        {
+                            QryTablas += "CREATE TABLE EMPLEADOS (Id_Empleados int primary key identity, Nombre varchar(100),"+ 
+                                         "NoCuenta varchar(50), Importe float, Periodo varchar(50))";
                         }
                         Query.CommandText = QryTablas;
                         Query.ExecuteNonQuery();
-                        Mensajes(5);
+                        Glo.Mensajes(5);                      
                     }
-                    else
+                    Query.CommandText = "SELECT COUNT(*) FROM USUARIOS";
+                    NumUsuarios = Convert.ToInt32(Query.ExecuteScalar());
+                    if (NumUsuarios == 0)
                     {
-                        Mensajes(4);
+                        Query.CommandText = "INSERT INTO USUARIOS VALUES('admin','admin','admin','admin','admin')";
+                        Query.ExecuteNonQuery();
                     }
                     Miconexion.Close();
                 }
             }
             catch (Exception)
             {
-                Mensajes(2);
+                Glo.Mensajes(2);
             }
         }
+        #endregion
+
+        #region Cargar Informacion
+        private void CargarInformacion()
+        {
+            if (File.Exists(path))
+            {
+                string datos = File.ReadAllText(path);
+                string[] parametros = datos.Split(Convert.ToChar(";"));
+                for (int i = 0; i < 4; i++)
+                {
+                    switch (i)
+                    {
+                        case 0:
+                            parametros[i] = parametros[i].Remove(0, 8);
+                            break;
+                        case 1:
+                            parametros[i] = parametros[i].Remove(0, 9);
+                            break;
+                        case 2:
+                            parametros[i] = parametros[i].Remove(0, 7);
+                            break;
+                        case 3:
+                            parametros[i] = parametros[i].Remove(0, 9);
+                            break;
+                    }                    
+                }
+                EDT_Usuario.Text = parametros[0];
+                EDT_Contrasena.Text = parametros[1];
+                EDT_Servidor.Text = parametros[2];
+                EDT_BD.Text = parametros[3];
+                
+            }
+        }
+        #endregion
 
         private void BTN_Cancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (Settings.Default.ConexionGuardada == false)
+            {
+                this.Close();
+            }
+            else
+            {
+                WIN_LogIn Login = new WIN_LogIn();
+                if (Modificar == false)
+                    Login.Show();
+                this.Close();
+            }
+                       
+        }
+
+        private void WIN_Login_F_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

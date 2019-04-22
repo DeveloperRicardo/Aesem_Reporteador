@@ -16,15 +16,22 @@ namespace AESEM_Reporteador
         [STAThread]
         static void Main()
         {
+            if (Settings.Default.Testing == true)
+            {
+                if (File.Exists(Environment.CurrentDirectory + @"\Conexion.ini"))
+                {
+                    Settings.Default.ConexionGuardada = true;
+                }
+            }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             if (Settings.Default.ConexionGuardada == true)
             {
-                Application.Run(new WIN_LogIn());
+                FormsApplication.Run(new WIN_LogIn());
             }
             else
             {
-                Application.Run(new WIN_Login_F());
+                FormsApplication.Run(new WIN_Login_F());
             }
         }
     }

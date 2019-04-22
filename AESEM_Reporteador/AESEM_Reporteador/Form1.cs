@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using AESEM_Reporteador.Properties;
 
 namespace AESEM_Reporteador
 {
     public partial class WIN_LogIn : Form
     {
+        MetodosGlobales Glo = new MetodosGlobales();
+        ConexionSQL BD = new ConexionSQL();
         public WIN_LogIn()
         {
             InitializeComponent();
@@ -19,7 +23,20 @@ namespace AESEM_Reporteador
 
         private void WIN_LogIn_Load(object sender, EventArgs e)
         {
-
+            
+            if (BD.Conexion(true))
+            {
+                BD.conexion.CreateCommand();
+                SqlCommand comando = BD.conexion.CreateCommand();
+                comando.CommandText = "SELECT Id_Usuarios, Nickname FROM USUARIOS";
+                SqlDataAdapter adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                var ds = new DataTable();
+                adaptador.Fill(ds);
+                CBOX_Usuario.DataSource = ds;
+                CBOX_Usuario.ValueMember = "Id_Usuarios";
+                CBOX_Usuario.DisplayMember = "Nickname";
+            }          
         }
 
         private void BTN_Salir_Click(object sender, EventArgs e)
@@ -32,12 +49,25 @@ namespace AESEM_Reporteador
             // Verifica que los campos tengan información
             if (ValidarCampos())
             {
+                bool ExisteUsuario = false;
                 // Se busca en la base de datos
+                BD.conexion.CreateCommand();
+                SqlCommand comando = BD.conexion.CreateCommand();
+                comando.CommandText = "IF EXISTS(SELECT * FROM USUARIOS WHERE Id_Usuarios = '" + CBOX_Usuario.SelectedValue + "' AND Password = '" + EDT_Contrasena.Text + "') SELECT 'true' ELSE SELECT 'false'";
+                ExisteUsuario = Convert.ToBoolean(comando.ExecuteScalar());
+                if (ExisteUsuario)
+                {
+                    WIN_Empresas_T Empresas = new WIN_Empresas_T();
+                    Empresas.Show();
+                    this.Close();
+                }
+                else
+                    Glo.Mensajes(2);
             }
             else
             {
                 // Muestra un mensaje donde indica que hay un error
-                MessageBox.Show("Los campos no pueden ir vacios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Glo.Mensajes(3);
             }
         }
 
@@ -45,7 +75,7 @@ namespace AESEM_Reporteador
         private bool ValidarCampos()
         {
             // Verifica que los campos tengan información en ellos
-            if (EDT_Usuario.Text == null || EDT_Contrasena == null)
+            if (CBOX_Usuario.Text == null || EDT_Contrasena == null)
                 return false;
             else
                 return true;
@@ -58,6 +88,17 @@ namespace AESEM_Reporteador
             {
 
             }
+            else
+            {
+                // Muestra un mensaje donde indica que hay un error
+                Glo.Mensajes(3);
+            }
+        }
+
+        private void BTN_ProbarConexion_Click(object sender, EventArgs e)
+        {
+            WIN_Login_F Login = new WIN_Login_F(true);
+            Login.Show();
         }
     }
 }

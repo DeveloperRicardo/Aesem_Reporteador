@@ -35,6 +35,7 @@ namespace AESEM_Reporteador.Properties {
             }
         }
         
+<<<<<<< HEAD
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
@@ -43,6 +44,29 @@ namespace AESEM_Reporteador.Properties {
         public string AESEMConnectionString {
             get {
                 return ((string)(this["AESEMConnectionString"]));
+=======
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int UsuarioDefault {
+            get {
+                return ((int)(this["UsuarioDefault"]));
+            }
+            set {
+                this["UsuarioDefault"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool Testing {
+            get {
+                return ((bool)(this["Testing"]));
+            }
+            set {
+                this["Testing"] = value;
+>>>>>>> b11cb80fb5a13e67fa47e30f8b1bf709e5f08029
             }
         }
     }

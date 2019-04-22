@@ -38,7 +38,6 @@
             this.STC_Servidor = new System.Windows.Forms.Label();
             this.BTN_Cancelar = new System.Windows.Forms.Button();
             this.BTN_Guardar = new System.Windows.Forms.Button();
-            this.BTN_Tablas = new System.Windows.Forms.Button();
             this.EDT_BD = new System.Windows.Forms.TextBox();
             this.PANEL_Encabezado = new System.Windows.Forms.Panel();
             this.STC_Titulo = new System.Windows.Forms.Label();
@@ -146,25 +145,6 @@
             this.BTN_Guardar.UseVisualStyleBackColor = false;
             this.BTN_Guardar.Click += new System.EventHandler(this.BTN_Guardar_Click);
             // 
-            // BTN_Tablas
-            // 
-            this.BTN_Tablas.BackColor = System.Drawing.Color.Transparent;
-            this.BTN_Tablas.FlatAppearance.BorderSize = 0;
-            this.BTN_Tablas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTN_Tablas.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_Tablas.Image = ((System.Drawing.Image)(resources.GetObject("BTN_Tablas.Image")));
-            this.BTN_Tablas.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BTN_Tablas.Location = new System.Drawing.Point(174, -2);
-            this.BTN_Tablas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BTN_Tablas.Name = "BTN_Tablas";
-            this.BTN_Tablas.Size = new System.Drawing.Size(108, 41);
-            this.BTN_Tablas.TabIndex = 41;
-            this.BTN_Tablas.Text = "Agregar";
-            this.BTN_Tablas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BTN_Tablas.UseVisualStyleBackColor = false;
-            this.BTN_Tablas.Visible = false;
-            this.BTN_Tablas.Click += new System.EventHandler(this.BTN_Tablas_Click);
-            // 
             // EDT_BD
             // 
             this.EDT_BD.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -180,7 +160,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PANEL_Encabezado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.PANEL_Encabezado.Controls.Add(this.STC_Titulo);
-            this.PANEL_Encabezado.Controls.Add(this.BTN_Tablas);
             this.PANEL_Encabezado.Location = new System.Drawing.Point(0, 0);
             this.PANEL_Encabezado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PANEL_Encabezado.Name = "PANEL_Encabezado";
@@ -233,8 +212,10 @@
             this.Controls.Add(this.STC_Contrasena);
             this.Controls.Add(this.EDT_Usuario);
             this.Controls.Add(this.STC_Usuario);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WIN_Login_F";
-            this.Text = "WIN_Login_F";
+            this.Text = "Conexión a Servidor";
+            this.Load += new System.EventHandler(this.WIN_Login_F_Load);
             this.PANEL_Encabezado.ResumeLayout(false);
             this.PANEL_Encabezado.PerformLayout();
             this.ResumeLayout(false);
@@ -253,7 +234,6 @@
         private System.Windows.Forms.Label STC_Servidor;
         private System.Windows.Forms.Button BTN_Cancelar;
         private System.Windows.Forms.Button BTN_Guardar;
-        private System.Windows.Forms.Button BTN_Tablas;
         private System.Windows.Forms.TextBox EDT_BD;
         private System.Windows.Forms.Panel PANEL_Encabezado;
         private System.Windows.Forms.Label STC_Titulo;
