@@ -35,6 +35,9 @@ namespace AESEM_Reporteador
                 case 7:
                     MessageBox.Show("No se pudo cerrar la conexión con la base de datos.", "AESEM", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
+                case 8:
+                    MessageBox.Show("Contraseña incorrecta.", "AESEM", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
             }
         }
         #endregion

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using System.Data.SqlClient; // Librería para conexión con la BD
 
 namespace AESEM_Reporteador
@@ -14,7 +15,7 @@ namespace AESEM_Reporteador
     public partial class WIN_Empresas_F : Form
     {
         // Se instancia un SqlConnection
-        SqlConnection MiConexion = new SqlConnection();
+        ConexionSQL BD = new ConexionSQL();
 
         // Variables globales
         static private int gnIdEmpresa;
@@ -22,9 +23,8 @@ namespace AESEM_Reporteador
         // Método constructor
         public WIN_Empresas_F(int pIdEmpresa = 0)
         {
-            gnIdEmpresa = pIdEmpresa;
-            RADIO_Semanal.Checked = true;
             InitializeComponent();
+            gnIdEmpresa = pIdEmpresa;
         }
 
         private void BTN_LupaEmpresa_Click(object sender, EventArgs e)
@@ -37,58 +37,84 @@ namespace AESEM_Reporteador
                 OpenFileDialog Archivo = new OpenFileDialog();
 
                 // Filtramos el tipo de archivos que se pueden mostrar y cargar
-                Archivo.Filter = "jpg files(*.jpg)|*.jpg";
+                Archivo.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|All Files (*.*)|*.*";
+                Archivo.Title = "Seleccione logo de la empresa";
 
-
-
-
+                // Verifica que se haya clickeado el botón OK
+                if (Archivo.ShowDialog() == DialogResult.OK)
+                {
+                    // Se muestra la imagen
+                    sRutaImagen = Archivo.FileName.ToString();
+                    EDT_Ruta.Text = sRutaImagen;
+                    IMG_Logo.ImageLocation = sRutaImagen;
+                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                
+                // Se muestra el error en caso de
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void BTN_Aceptar_Click(object sender, EventArgs e)
         {
-            // Verifica que todos los campos tengan información
-            if (ValidarCampos() == true)
+            // Se verifica que no ocurra ningún error
+            try
             {
-                // Variable
-                int nTipoOpcion = 0;
-
-                // Verifica que opción de Radio Button se seleccionó
-                if (RADIO_Semanal.Checked == true)
-                    nTipoOpcion = 1;
-                else if (RADIO_Catorcenal.Checked == true)
-                    nTipoOpcion = 2;
-                else if (RADIO_Quincenal.Checked == true)
-                    nTipoOpcion = 3;
-                else if (RADIO_Mensual.Checked == true)
-                    nTipoOpcion = 4;
-
-                // Verifica si el registro es nuevo
-                if (gnIdEmpresa == 0)
+                // Verifica que todos los campos tengan información
+                if (ValidarCampos() == true)
                 {
-                    // Se abre la conexión y se estructura el query para agregar el registro
-                    MiConexion.Open();
-                    SqlCommand cmd = MiConexion.CreateCommand();
-                    cmd.CommandText = "Insert Into EMPRESAS(Sindicato, Lugar, TipoPago, Comentarios, Concepto, Logo)" +
-                        "Values('" + EDT_Sindicato.Text + "', '" + EDT_Lugar.Text + "', " + nTipoOpcion + ", '" + EDT_Comentarios.Text + "', '" + EDT_Concepto.Text + "')";
-                    cmd.ExecuteNonQuery();
-                    MiConexion.Close();
+                    // Variables
+                    byte[] btImagen = null;
+                    int nTipoOpcion = 0;
+
+                    // Objetos
+                    FileStream fs = new FileStream(EDT_Ruta.Text, FileMode.Open, FileAccess.Read);
+                    BinaryReader br = new BinaryReader(fs);
+
+                    // Se guarda la imagen en bytes
+                    btImagen = br.ReadBytes((int)fs.Length);
+
+                    // Verifica que opción de Radio Button se seleccionó
+                    if (RADIO_Semanal.Checked == true)
+                        nTipoOpcion = 1;
+                    else if (RADIO_Catorcenal.Checked == true)
+                        nTipoOpcion = 2;
+                    else if (RADIO_Quincenal.Checked == true)
+                        nTipoOpcion = 3;
+                    else if (RADIO_Mensual.Checked == true)
+                        nTipoOpcion = 4;
+
+                    // Verifica si el registro es nuevo
+                    if (gnIdEmpresa == 0)
+                    {
+                        // Se abre la conexión y se estructura el query para agregar el registro
+                        SqlCommand cmd = BD.conexion.CreateCommand();
+                        cmd.CommandText = "Insert Into EMPRESAS(Sindicato, Lugar, TipoPago, Ruta, Concepto, Logo) " +
+                            "Values('" + EDT_Sindicato.Text + "', '" + EDT_Lugar.Text + "', " + nTipoOpcion + ", '" + EDT_Ruta.Text + "', '" + EDT_Concepto.Text + "', @img)";
+                        cmd.Parameters.Add(new SqlParameter("@img", btImagen));
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Registro agregado con éxito.", "Agregar Empresas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else // Registro ya existente, se modifica
+                    {
+                        // Se abre conexión y se estructura el query para modificar el registro
+                        SqlCommand cmd = BD.conexion.CreateCommand();
+                        cmd.CommandText = "Update EMPRESAS " +
+                            "Set Sindicato = '" + EDT_Sindicato.Text + "', Lugar = '" + EDT_Lugar.Text + "', TipoPago = " + nTipoOpcion + ", Ruta = '" + EDT_Ruta.Text + "', Concepto = '" + EDT_Concepto.Text + "', Logo = @img " +
+                            "WHERE Id_Empresas = " + gnIdEmpresa;
+                        cmd.Parameters.Add(new SqlParameter("@img", btImagen));
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Registro modificado con éxito.", "Modificar Empresas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                    this.Close(); // Se cierra la ventana
                 }
-                else // Registro ya existente, se modifica
-                {
-                    // Se abre conexión y se estructura el query para modificar el registro
-                    MiConexion.Open();
-                    SqlCommand cmd = MiConexion.CreateCommand();
-                    cmd.CommandText = "Update EMPRESAS" +
-                        "Set Sindicato = '" + EDT_Sindicato.Text + "', Lugar = '" + EDT_Lugar.Text + "', TipoPago = " + nTipoOpcion + ", Comentarios = '" + EDT_Comentarios.Text + "', Concepto = '" + EDT_Concepto.Text + "'" +
-                        "WHERE Id_Empresas = " + gnIdEmpresa;
-                    cmd.ExecuteNonQuery();
-                    MiConexion.Close();
-                }
+            }
+            catch (Exception ex)
+            {
+                // Se muestra el error en caso de
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -116,14 +142,6 @@ namespace AESEM_Reporteador
                 return false;
             }
 
-            // Verifica que el campo "Comentarios" tenga información
-            if (EDT_Comentarios.TextLength == 0)
-            {
-                MessageBox.Show("Favor de capturar comentarios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                EDT_Comentarios.Focus();
-                return false;
-            }
-
             // Verifica que el campo "Conceptos" tenga información
             if (EDT_Concepto.TextLength == 0)
             {
@@ -141,6 +159,55 @@ namespace AESEM_Reporteador
 
             return true;
         }
-    
+
+        private void WIN_Empresas_F_Load(object sender, EventArgs e)
+        {
+            if (BD.Conexion(true))
+            {
+                // Se verifica si el registro existe
+                if (gnIdEmpresa != 0)
+                {
+                    // Obtiene la información de la empresa
+                    SqlCommand cmd = BD.conexion.CreateCommand();
+                    cmd.CommandText = "Select Sindicato, Lugar, TipoPago, Ruta, Concepto, Logo From EMPRESAS Where Id_Empresas = " + gnIdEmpresa;
+                    SqlDataReader Reader = cmd.ExecuteReader();
+                    Reader.Read();
+
+                    // Verifica si tiene información
+                    if (Reader.HasRows)
+                    {
+                        // Inserta la información a los controles
+                        EDT_Sindicato.Text = Reader[0].ToString();
+                        EDT_Lugar.Text = Reader[1].ToString();
+                        EDT_Ruta.Text = Reader[3].ToString();
+                        EDT_Concepto.Text = Reader[4].ToString();
+                        byte[] btImg = (byte[])(Reader[5]);
+
+                        // Verifica que opción de radio fue la seleccionada
+                        switch (Reader[2])
+                        {
+                            case 1: RADIO_Semanal.Checked = true; break;
+                            case 2: RADIO_Catorcenal.Checked = true; break;
+                            case 3: RADIO_Quincenal.Checked = true; break;
+                            case 4: RADIO_Mensual.Checked = true; break;
+                        }
+
+                        // Verifica si la información de la imagen se pudo recuperar
+                        if (btImg == null)
+                            IMG_Logo.Image = null;
+                        else
+                        {
+                            MemoryStream ms = new MemoryStream(btImg);
+                            IMG_Logo.Image = Image.FromStream(ms);
+                        }
+                    }
+                    Reader.Close();
+                }
+                else // Registro nuevo
+                {
+                    RADIO_Semanal.Checked = true;
+                }
+            }
+        }
     }
 }

@@ -52,6 +52,7 @@
             this.GB_Opciones = new System.Windows.Forms.GroupBox();
             this.RADIO_Opcion2 = new System.Windows.Forms.RadioButton();
             this.CBOX_Usuario = new System.Windows.Forms.ComboBox();
+            this.BTN_Algo = new System.Windows.Forms.Button();
             this.PANEL_Encabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Tabla)).BeginInit();
             this.GB_Opciones.SuspendLayout();
@@ -331,11 +332,24 @@
             this.CBOX_Usuario.Size = new System.Drawing.Size(253, 31);
             this.CBOX_Usuario.TabIndex = 34;
             // 
+            // BTN_Algo
+            // 
+            this.BTN_Algo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BTN_Algo.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTN_Algo.ForeColor = System.Drawing.Color.White;
+            this.BTN_Algo.Location = new System.Drawing.Point(429, 263);
+            this.BTN_Algo.Name = "BTN_Algo";
+            this.BTN_Algo.Size = new System.Drawing.Size(101, 34);
+            this.BTN_Algo.TabIndex = 35;
+            this.BTN_Algo.Text = "Botón";
+            this.BTN_Algo.UseVisualStyleBackColor = false;
+            // 
             // Z_DummyDeControles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BTN_Algo);
             this.Controls.Add(this.CBOX_Usuario);
             this.Controls.Add(this.GB_Opciones);
             this.Controls.Add(this.DGV_Tabla);
@@ -385,5 +399,6 @@
         private System.Windows.Forms.GroupBox GB_Opciones;
         private System.Windows.Forms.RadioButton RADIO_Opcion2;
         private System.Windows.Forms.ComboBox CBOX_Usuario;
+        private System.Windows.Forms.Button BTN_Algo;
     }
 }

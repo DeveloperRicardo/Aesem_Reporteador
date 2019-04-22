@@ -57,12 +57,12 @@ namespace AESEM_Reporteador
                 ExisteUsuario = Convert.ToBoolean(comando.ExecuteScalar());
                 if (ExisteUsuario)
                 {
-                    WIN_Empresas_T Empresas = new WIN_Empresas_T();
-                    Empresas.Show();
+                    WIN_Principal Window = new WIN_Principal();
+                    Window.Show();
                     this.Close();
                 }
                 else
-                    Glo.Mensajes(2);
+                    Glo.Mensajes(8);
             }
             else
             {
@@ -75,7 +75,7 @@ namespace AESEM_Reporteador
         private bool ValidarCampos()
         {
             // Verifica que los campos tengan información en ellos
-            if (CBOX_Usuario.Text == null || EDT_Contrasena == null)
+            if (CBOX_Usuario.Text == null || EDT_Contrasena.Text == "")
                 return false;
             else
                 return true;

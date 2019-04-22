@@ -286,6 +286,7 @@
             this.Controls.Add(this.BTN_ExportarXLS);
             this.Controls.Add(this.EDT_Ruta);
             this.Controls.Add(this.BTN_Adjuntar);
+            this.MaximizeBox = false;
             this.Name = "WIN_Nominas_T";
             this.Text = "Exportador";
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Tabla)).EndInit();

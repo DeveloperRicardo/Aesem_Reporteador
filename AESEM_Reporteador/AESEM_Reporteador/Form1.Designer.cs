@@ -37,7 +37,6 @@
             this.STC_Titulo = new System.Windows.Forms.Label();
             this.BTN_Salir = new System.Windows.Forms.Button();
             this.BTN_Acceder = new System.Windows.Forms.Button();
-            this.BTN_Registrar = new System.Windows.Forms.Button();
             this.CBOX_Usuario = new System.Windows.Forms.ComboBox();
             this.BTN_ProbarConexion = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.IMG_Logo)).BeginInit();
@@ -138,25 +137,6 @@
             this.BTN_Acceder.UseVisualStyleBackColor = false;
             this.BTN_Acceder.Click += new System.EventHandler(this.BTN_Acceder_Click);
             // 
-            // BTN_Registrar
-            // 
-            this.BTN_Registrar.BackColor = System.Drawing.Color.Transparent;
-            this.BTN_Registrar.FlatAppearance.BorderSize = 0;
-            this.BTN_Registrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTN_Registrar.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_Registrar.Image = ((System.Drawing.Image)(resources.GetObject("BTN_Registrar.Image")));
-            this.BTN_Registrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BTN_Registrar.Location = new System.Drawing.Point(212, 193);
-            this.BTN_Registrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BTN_Registrar.Name = "BTN_Registrar";
-            this.BTN_Registrar.Size = new System.Drawing.Size(139, 41);
-            this.BTN_Registrar.TabIndex = 5;
-            this.BTN_Registrar.Text = "Registrar Usuario";
-            this.BTN_Registrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BTN_Registrar.UseVisualStyleBackColor = false;
-            this.BTN_Registrar.Visible = false;
-            this.BTN_Registrar.Click += new System.EventHandler(this.BTN_Registrar_Click);
-            // 
             // CBOX_Usuario
             // 
             this.CBOX_Usuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -192,7 +172,6 @@
             this.ClientSize = new System.Drawing.Size(481, 248);
             this.Controls.Add(this.BTN_ProbarConexion);
             this.Controls.Add(this.CBOX_Usuario);
-            this.Controls.Add(this.BTN_Registrar);
             this.Controls.Add(this.BTN_Salir);
             this.Controls.Add(this.BTN_Acceder);
             this.Controls.Add(this.PANEL_Encabezado);
@@ -222,7 +201,6 @@
         private System.Windows.Forms.Label STC_Titulo;
         private System.Windows.Forms.Button BTN_Salir;
         private System.Windows.Forms.Button BTN_Acceder;
-        private System.Windows.Forms.Button BTN_Registrar;
         private System.Windows.Forms.ComboBox CBOX_Usuario;
         private System.Windows.Forms.Button BTN_ProbarConexion;
     }

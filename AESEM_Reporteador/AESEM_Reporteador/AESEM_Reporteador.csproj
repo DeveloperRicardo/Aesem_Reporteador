@@ -94,11 +94,35 @@
     <Compile Include="WIN_Login_F.Designer.cs">
       <DependentUpon>WIN_Login_F.cs</DependentUpon>
     </Compile>
+    <Compile Include="WIN_Nominas_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WIN_Nominas_F.Designer.cs">
+      <DependentUpon>WIN_Nominas_F.cs</DependentUpon>
+    </Compile>
     <Compile Include="WIN_Nominas_T.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="WIN_Nominas_T.Designer.cs">
       <DependentUpon>WIN_Nominas_T.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WIN_Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WIN_Principal.Designer.cs">
+      <DependentUpon>WIN_Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WIN_Usuarios_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WIN_Usuarios_F.Designer.cs">
+      <DependentUpon>WIN_Usuarios_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WIN_Usuarios_T.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WIN_Usuarios_T.Designer.cs">
+      <DependentUpon>WIN_Usuarios_T.cs</DependentUpon>
     </Compile>
     <Compile Include="Z_DummyDeControles.cs">
       <SubType>Form</SubType>
@@ -128,8 +152,20 @@
     <EmbeddedResource Include="WIN_Login_F.resx">
       <DependentUpon>WIN_Login_F.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WIN_Nominas_F.resx">
+      <DependentUpon>WIN_Nominas_F.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WIN_Nominas_T.resx">
       <DependentUpon>WIN_Nominas_T.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WIN_Principal.resx">
+      <DependentUpon>WIN_Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WIN_Usuarios_F.resx">
+      <DependentUpon>WIN_Usuarios_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WIN_Usuarios_T.resx">
+      <DependentUpon>WIN_Usuarios_T.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Z_DummyDeControles.resx">
       <DependentUpon>Z_DummyDeControles.cs</DependentUpon>
