@@ -189,7 +189,7 @@
             this.MaximizeBox = false;
             this.Name = "WIN_Nominas_F";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nominas";
+            this.Text = "Catálogo Nóminas";
             this.Load += new System.EventHandler(this.WIN_Nominas_F_Load);
             this.PANEL_Encabezado.ResumeLayout(false);
             this.PANEL_Encabezado.PerformLayout();

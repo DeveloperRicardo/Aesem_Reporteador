@@ -52,7 +52,7 @@ namespace AESEM_Reporteador
             catch (Exception ex)
             {
                 // Se muestra el error en caso de
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Empresas", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -88,24 +88,34 @@ namespace AESEM_Reporteador
                     // Verifica si el registro es nuevo
                     if (gnIdEmpresa == 0)
                     {
-                        // Se abre la conexión y se estructura el query para agregar el registro
+                        // Se verifica si existe el registro
                         SqlCommand cmd = BD.conexion.CreateCommand();
-                        cmd.CommandText = "Insert Into EMPRESAS(Sindicato, Lugar, TipoPago, Ruta, Concepto, Logo) " +
-                            "Values('" + EDT_Sindicato.Text + "', '" + EDT_Lugar.Text + "', " + nTipoOpcion + ", '" + EDT_Ruta.Text + "', '" + EDT_Concepto.Text + "', @img)";
+                        cmd.CommandText = "Select * From EMPRESAS Where Sindicato = '" + EDT_Sindicato.Text + "'";
+                        SqlDataReader Reader = cmd.ExecuteReader();
+                        Reader.Read();
+
+                        if (Reader.HasRows)
+                        {
+                            MessageBox.Show("La empresa ya existe.", "Empresas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        cmd.CommandText = "Insert Into EMPRESAS(Sindicato, Lugar, TipoPago, Ruta, Logo) " +
+                            "Values('" + EDT_Sindicato.Text + "', '" + EDT_Lugar.Text + "', " + nTipoOpcion + ", '" + EDT_Ruta.Text + "', @img)";
                         cmd.Parameters.Add(new SqlParameter("@img", btImagen));
                         cmd.ExecuteNonQuery();
-                        MessageBox.Show("Registro agregado con éxito.", "Agregar Empresas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Registro agregado con éxito.", "Empresas", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else // Registro ya existente, se modifica
                     {
                         // Se abre conexión y se estructura el query para modificar el registro
                         SqlCommand cmd = BD.conexion.CreateCommand();
                         cmd.CommandText = "Update EMPRESAS " +
-                            "Set Sindicato = '" + EDT_Sindicato.Text + "', Lugar = '" + EDT_Lugar.Text + "', TipoPago = " + nTipoOpcion + ", Ruta = '" + EDT_Ruta.Text + "', Concepto = '" + EDT_Concepto.Text + "', Logo = @img " +
+                            "Set Sindicato = '" + EDT_Sindicato.Text + "', Lugar = '" + EDT_Lugar.Text + "', TipoPago = " + nTipoOpcion + ", Ruta = '" + EDT_Ruta.Text + "', Logo = @img " +
                             "WHERE Id_Empresas = " + gnIdEmpresa;
                         cmd.Parameters.Add(new SqlParameter("@img", btImagen));
                         cmd.ExecuteNonQuery();
-                        MessageBox.Show("Registro modificado con éxito.", "Modificar Empresas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Registro modificado con éxito.", "Empresas", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                     this.Close(); // Se cierra la ventana
@@ -123,43 +133,6 @@ namespace AESEM_Reporteador
             this.Close(); // Se cierra la ventana
         }
 
-        // Método que verifica que los campos tengan información
-        private bool ValidarCampos()
-        {
-            // Verifica que el campo de "Sindicato" tenga información
-            if (EDT_Sindicato.TextLength == 0)
-            {
-                MessageBox.Show("Favor de capturar el sindicato de la empresa.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                EDT_Sindicato.Focus();
-                return false;
-            }
-
-            // Verifica que el campo de "Lugar" tenga información
-            if (EDT_Lugar.TextLength == 0)
-            {
-                MessageBox.Show("Favor de capturar el lugar de la empresa.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                EDT_Lugar.Focus();
-                return false;
-            }
-
-            // Verifica que el campo "Conceptos" tenga información
-            if (EDT_Concepto.TextLength == 0)
-            {
-                MessageBox.Show("Favor de capturar el concepto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                EDT_Concepto.Focus();
-                return false;
-            }
-
-            // Verifica que se haya cargado una imagen
-            if (EDT_Ruta.TextLength == 0 || IMG_Logo.Image == null)
-            {
-                MessageBox.Show("Favor de insertar el logo de la empresa.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-
-            return true;
-        }
-
         private void WIN_Empresas_F_Load(object sender, EventArgs e)
         {
             if (BD.Conexion(true))
@@ -167,21 +140,20 @@ namespace AESEM_Reporteador
                 // Se verifica si el registro existe
                 if (gnIdEmpresa != 0)
                 {
-                    // Obtiene la información de la empresa
+                    // Obtiene el registro de la empresa
                     SqlCommand cmd = BD.conexion.CreateCommand();
-                    cmd.CommandText = "Select Sindicato, Lugar, TipoPago, Ruta, Concepto, Logo From EMPRESAS Where Id_Empresas = " + gnIdEmpresa;
+                    cmd.CommandText = "Select Sindicato, Lugar, TipoPago, Ruta, Logo From EMPRESAS Where Id_Empresas = " + gnIdEmpresa;
                     SqlDataReader Reader = cmd.ExecuteReader();
                     Reader.Read();
 
-                    // Verifica si tiene información
+                    // Verifica si se recuperó la información
                     if (Reader.HasRows)
                     {
-                        // Inserta la información a los controles
+                        // Inserta la información en los controles
                         EDT_Sindicato.Text = Reader[0].ToString();
                         EDT_Lugar.Text = Reader[1].ToString();
                         EDT_Ruta.Text = Reader[3].ToString();
-                        EDT_Concepto.Text = Reader[4].ToString();
-                        byte[] btImg = (byte[])(Reader[5]);
+                        byte[] btImg = (byte[])(Reader[4]);
 
                         // Verifica que opción de radio fue la seleccionada
                         switch (Reader[2])
@@ -204,10 +176,37 @@ namespace AESEM_Reporteador
                     Reader.Close();
                 }
                 else // Registro nuevo
-                {
                     RADIO_Semanal.Checked = true;
-                }
             }
+        }
+
+        // Método que verifica que los campos tengan información
+        private bool ValidarCampos()
+        {
+            // Verifica que el campo de "Sindicato" tenga información
+            if (EDT_Sindicato.TextLength == 0)
+            {
+                MessageBox.Show("Favor de capturar el sindicato de la empresa.", "Empresas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                EDT_Sindicato.Focus();
+                return false;
+            }
+
+            // Verifica que el campo de "Lugar" tenga información
+            if (EDT_Lugar.TextLength == 0)
+            {
+                MessageBox.Show("Favor de capturar el lugar de la empresa.", "Empresas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                EDT_Lugar.Focus();
+                return false;
+            }
+
+            // Verifica que se haya cargado una imagen
+            if (EDT_Ruta.TextLength == 0 || IMG_Logo.Image == null)
+            {
+                MessageBox.Show("Favor de insertar el logo de la empresa.", "Empresas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
         }
     }
 }

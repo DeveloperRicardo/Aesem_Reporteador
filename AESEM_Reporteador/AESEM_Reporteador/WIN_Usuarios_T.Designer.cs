@@ -235,7 +235,7 @@
             this.MaximizeBox = false;
             this.Name = "WIN_Usuarios_T";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Usuarios";
+            this.Text = "Catálogo Usuarios";
             this.Load += new System.EventHandler(this.WIN_Usuarios_T_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Tabla)).EndInit();
             this.PANEL_Encabezado.ResumeLayout(false);

@@ -211,7 +211,7 @@
             this.MaximizeBox = false;
             this.Name = "WIN_Usuarios_F";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Usuarios";
+            this.Text = "Catálogo Usuarios";
             this.Load += new System.EventHandler(this.WIN_Usuarios_F_Load);
             this.PANEL_Encabezado.ResumeLayout(false);
             this.PANEL_Encabezado.PerformLayout();
