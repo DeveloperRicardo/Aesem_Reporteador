@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
+using Dapper;
 
 namespace AESEM_Reporteador
 {
@@ -36,6 +38,14 @@ namespace AESEM_Reporteador
             // Amén
             if (BD.Conexion(true))
                 Refrescar();
+            using (IDbConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings["AESEM_Reporteador.Properties.Settings.AESEMConnectionString"].ConnectionString))
+            {
+                if (db.State == ConnectionState.Closed)
+                    db.Open();
+                string query = "SELECT EMPLEADOS.Id_Empleados ,EMPLEADOS.Nombre, EMPLEADOS.NoCuenta, EMPLEADOS.Importe, EMPLEADOS.Periodo FROM EMPLEADOS";
+                orderSqlBindingSource.DataSource = db.Query<OrderSql>(query, commandType: CommandType.Text);
+
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -118,6 +128,11 @@ namespace AESEM_Reporteador
             var Data = new DataTable();
             Adaptador.Fill(Data);
             DGV_Tabla.DataSource = Data;
+        }
+
+        private void BTN_ExportarXLS_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
