@@ -117,26 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="COL_IdEmpleado.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="COL_Nombre.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="COL_NoCuenta.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="COL_Importe.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="COL_Periodo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <metadata name="clsParametrosNominaPBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACsAAAArCAYAAADhXXHAAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxEAAAsRAX9kX5EAAA65SURBVFhHpZgHWJRXuseP0kQR
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAA65SURBVFhHpZgHWJRXuseP0kQR
         K6CCCkqvQ+8IdpSugAU1tqhRNyomklx1NdG4JjfZJKuxZBMTjSUme9fouvs8NzfuZpNoKIZiw5IofYah
         iGABkf/9n28GHXRYze77PP9n5jvfN+f78Z63nIMA8O/KlBrYAgz458VLA/YcPWq/cft2l5Uvv+y1Mjvb
         Z3n2WrecLVsd3j/wmfXJ3Dyhvnuv83c99J+/WkYHnyKbm4D9+wcP2c/MyBg3ycvjpYm2Nnvirfv+ObmP
@@ -205,7 +193,7 @@
   <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxEAAAsRAX9kX5EAAAJNSURBVEhLtZZLqE5RGIa3lDCi
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAAJNSURBVEhLtZZLqE5RGIa3lDCi
         zKRk5mTAyAQT96KjDkZKbmFAUUqERKmTcwzkDIgYIJSBzDBS7rdiJHKJKHLLXS7Pu1rv3/K3+ffa/eep
         Z/C9e//ft9v/3nutoh9ZjLfxDV7COdhvrMffJc7AvxiCs3EJLsdlLdQ5szBlEXrAfdyGD5K6wTp8gT45
         x+kodNucvcThKFai80A3OpDf8DN+qeAz1J3pQP9e+RgUQ/EOKn+qYHIs5HWcgiNwGOoKWylGoi7SfSag
@@ -221,7 +209,7 @@
   <data name="BTN_Aceptar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACsAAAArCAYAAADhXXHAAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxAAAAsQAa0jvXUAAA96SURBVFhHrZkHVFTXt8aPIDBU
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAA96SURBVFhHrZkHVFTXt8aPIDBU
         Y82zRv1bUVEEIzaQotIHULFEfcREYqE3URHFgka6NGlKR5oCCgg2SCKCithiNEZjoi/2RrBQZr6372VG
         2hiTvLfX+ta9c+bOuT/3PnuffZAB+LdSIPVFE/pcqfm5d1by4UGBAcEjPV19Nd2dvca5O3uP2ua3a9CB
         2CyNMycvsoZnzdxv5CTqPNffkszBj+jT5tcYkhqXO2ih/YLZ4/WGug/QUojuq8Vy++mw8t46rKrXFHbh

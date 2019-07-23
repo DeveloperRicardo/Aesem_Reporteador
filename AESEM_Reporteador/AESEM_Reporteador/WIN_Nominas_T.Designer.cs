@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -38,11 +39,6 @@
             this.STC_AdjuntarArchivo = new System.Windows.Forms.Label();
             this.STC_Empresa = new System.Windows.Forms.Label();
             this.DGV_Tabla = new System.Windows.Forms.DataGridView();
-            this.COL_IdEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COL_Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COL_NoCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COL_Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COL_Periodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.PANEL_Encabezado = new System.Windows.Forms.Panel();
             this.STC_Titulo = new System.Windows.Forms.Label();
@@ -50,8 +46,17 @@
             this.CBOX_Empresa = new System.Windows.Forms.ComboBox();
             this.BTN_LupaArchivo = new System.Windows.Forms.Button();
             this.BTN_Aceptar = new System.Windows.Forms.Button();
+            this.clsParametrosNominaPBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sindicatoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.periodoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lugarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.logoDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Tabla)).BeginInit();
             this.PANEL_Encabezado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clsParametrosNominaPBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // EDT_Ruta
@@ -109,9 +114,7 @@
             // 
             // DGV_Tabla
             // 
-            this.DGV_Tabla.AllowUserToAddRows = false;
-            this.DGV_Tabla.AllowUserToDeleteRows = false;
-            this.DGV_Tabla.AllowUserToOrderColumns = true;
+            this.DGV_Tabla.AutoGenerateColumns = false;
             this.DGV_Tabla.BackgroundColor = System.Drawing.Color.DarkGray;
             this.DGV_Tabla.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -124,17 +127,19 @@
             this.DGV_Tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGV_Tabla.ColumnHeadersHeight = 30;
             this.DGV_Tabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.COL_IdEmpleado,
-            this.COL_Nombre,
-            this.COL_NoCuenta,
-            this.COL_Importe,
-            this.COL_Periodo});
+            this.dataGridViewTextBoxColumn1,
+            this.sindicatoDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.periodoDataGridViewTextBoxColumn,
+            this.lugarDataGridViewTextBoxColumn,
+            this.logoDataGridViewImageColumn});
+            this.DGV_Tabla.DataSource = this.clsParametrosNominaPBindingSource;
             this.DGV_Tabla.EnableHeadersVisualStyles = false;
             this.DGV_Tabla.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.DGV_Tabla.Location = new System.Drawing.Point(21, 165);
             this.DGV_Tabla.Margin = new System.Windows.Forms.Padding(4);
             this.DGV_Tabla.Name = "DGV_Tabla";
-            this.DGV_Tabla.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -144,6 +149,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DGV_Tabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGV_Tabla.RowHeadersVisible = false;
+            this.DGV_Tabla.RowHeadersWidth = 51;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
@@ -151,54 +157,9 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.DGV_Tabla.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.DGV_Tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_Tabla.Size = new System.Drawing.Size(1028, 238);
+            this.DGV_Tabla.Size = new System.Drawing.Size(1027, 238);
             this.DGV_Tabla.TabIndex = 37;
             this.DGV_Tabla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Tabla_CellContentClick);
-            // 
-            // COL_IdEmpleado
-            // 
-            this.COL_IdEmpleado.DataPropertyName = "Id_Empleados";
-            this.COL_IdEmpleado.Frozen = true;
-            this.COL_IdEmpleado.HeaderText = "IdEmpleado";
-            this.COL_IdEmpleado.Name = "COL_IdEmpleado";
-            this.COL_IdEmpleado.ReadOnly = true;
-            this.COL_IdEmpleado.Visible = false;
-            // 
-            // COL_Nombre
-            // 
-            this.COL_Nombre.DataPropertyName = "Nombre";
-            this.COL_Nombre.Frozen = true;
-            this.COL_Nombre.HeaderText = "Nombre";
-            this.COL_Nombre.Name = "COL_Nombre";
-            this.COL_Nombre.ReadOnly = true;
-            this.COL_Nombre.Width = 250;
-            // 
-            // COL_NoCuenta
-            // 
-            this.COL_NoCuenta.DataPropertyName = "NoCuenta";
-            this.COL_NoCuenta.Frozen = true;
-            this.COL_NoCuenta.HeaderText = "No. Cuenta";
-            this.COL_NoCuenta.Name = "COL_NoCuenta";
-            this.COL_NoCuenta.ReadOnly = true;
-            this.COL_NoCuenta.Width = 200;
-            // 
-            // COL_Importe
-            // 
-            this.COL_Importe.DataPropertyName = "Importe";
-            this.COL_Importe.Frozen = true;
-            this.COL_Importe.HeaderText = "Importe";
-            this.COL_Importe.Name = "COL_Importe";
-            this.COL_Importe.ReadOnly = true;
-            this.COL_Importe.Width = 150;
-            // 
-            // COL_Periodo
-            // 
-            this.COL_Periodo.DataPropertyName = "Periodo";
-            this.COL_Periodo.Frozen = true;
-            this.COL_Periodo.HeaderText = "Periodo";
-            this.COL_Periodo.Name = "COL_Periodo";
-            this.COL_Periodo.ReadOnly = true;
-            this.COL_Periodo.Width = 170;
             // 
             // button1
             // 
@@ -295,6 +256,66 @@
             this.BTN_Aceptar.TabIndex = 44;
             this.BTN_Aceptar.UseVisualStyleBackColor = false;
             // 
+            // clsParametrosNominaPBindingSource
+            // 
+            this.clsParametrosNominaPBindingSource.DataSource = typeof(AESEM_Reporteador.Cls_ParametrosNomina_P);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Nombre";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // sindicatoDataGridViewTextBoxColumn
+            // 
+            this.sindicatoDataGridViewTextBoxColumn.DataPropertyName = "Sindicato";
+            this.sindicatoDataGridViewTextBoxColumn.HeaderText = "Sindicato";
+            this.sindicatoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sindicatoDataGridViewTextBoxColumn.Name = "sindicatoDataGridViewTextBoxColumn";
+            this.sindicatoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "NoCuenta";
+            this.dataGridViewTextBoxColumn2.HeaderText = "NoCuenta";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Importe";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Importe";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // periodoDataGridViewTextBoxColumn
+            // 
+            this.periodoDataGridViewTextBoxColumn.DataPropertyName = "Periodo";
+            this.periodoDataGridViewTextBoxColumn.HeaderText = "Periodo";
+            this.periodoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.periodoDataGridViewTextBoxColumn.Name = "periodoDataGridViewTextBoxColumn";
+            this.periodoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // lugarDataGridViewTextBoxColumn
+            // 
+            this.lugarDataGridViewTextBoxColumn.DataPropertyName = "Lugar";
+            this.lugarDataGridViewTextBoxColumn.HeaderText = "Lugar";
+            this.lugarDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.lugarDataGridViewTextBoxColumn.Name = "lugarDataGridViewTextBoxColumn";
+            this.lugarDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // logoDataGridViewImageColumn
+            // 
+            this.logoDataGridViewImageColumn.DataPropertyName = "Logo";
+            this.logoDataGridViewImageColumn.HeaderText = "Logo";
+            this.logoDataGridViewImageColumn.MinimumWidth = 6;
+            this.logoDataGridViewImageColumn.Name = "logoDataGridViewImageColumn";
+            this.logoDataGridViewImageColumn.Width = 125;
+            // 
             // BTN_Modificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -322,6 +343,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Tabla)).EndInit();
             this.PANEL_Encabezado.ResumeLayout(false);
             this.PANEL_Encabezado.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clsParametrosNominaPBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -340,11 +362,28 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox CBOX_Empresa;
         private System.Windows.Forms.Button BTN_LupaArchivo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COL_IdEmpleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COL_Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COL_NoCuenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COL_Importe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COL_Periodo;
         private System.Windows.Forms.Button BTN_Aceptar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sNombreEmpleadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sNombreSucursalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sDireccionSucursalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn importeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noCuentaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idSucursalesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreSucuDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn imagesDataGridViewImageColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreEmpleadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreSucursalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id_Empleados;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Image;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sindicatoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn periodoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lugarDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn logoDataGridViewImageColumn;
+        private System.Windows.Forms.BindingSource clsParametrosNominaPBindingSource;
     }
 }
